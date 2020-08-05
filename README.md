@@ -7,22 +7,14 @@
 
 
 
-## LiDAR Segment - Point Cloud Library<br/>
+## Gazebo World Segment<br/>
 ...Insert summary text here...
 
 The main principles taught in this segment are: 
 
 ...Insert image here...
 
-## Camera Segment - OpenCV<br/>
-...Insert summary text here...
-
-The main principles taught in this segment are: 
-
-...Insert image here...
-
-
-## Radar Segment - Matlab<br/>
+## ROS Essentials Segment<br/>
 ...Insert summary text here...
 
 The main principles taught in this segment are: 
@@ -30,7 +22,23 @@ The main principles taught in this segment are:
 ...Insert image here...
 
 
-## Kalman Filter Segment<br/>
+## Localization Segment<br/>
+...Insert summary text here...
+
+The main principles taught in this segment are: 
+
+...Insert image here...
+
+
+## Mapping & SLAM Segment<br/>
+...Insert summary text here...
+
+The main principles taught in this segment are: 
+
+...Insert image here...
+
+
+## Path Planning & Navigation Segment<br/>
 ...Insert summary text here...
 
 The main principles taught in this segment are: 
