@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/script/hello.cpp
+/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan/script/hello.cpp
 gazebo/gazebo.hh
 -
 

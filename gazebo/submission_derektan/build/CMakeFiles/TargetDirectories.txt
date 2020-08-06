@@ -1,3 +1,0 @@
-/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles/rebuild_cache.dir
-/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles/hello.dir
-/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles/edit_cache.dir

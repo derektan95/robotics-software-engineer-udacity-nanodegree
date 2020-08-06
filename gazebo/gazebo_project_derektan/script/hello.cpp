@@ -7,7 +7,7 @@ namespace gazebo
     // Use Constructor to print Hello World
     public: WorldPluginMyRobot() : WorldPlugin()
             {
-              printf("Hello World!\n");
+              printf("Welcome to Derek's World!\n");
             }
 
     // Receives info from world file

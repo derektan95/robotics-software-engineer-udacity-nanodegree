@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot
+CMAKE_SOURCE_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build
+CMAKE_BINARY_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/hello.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/gaz
 CMakeFiles/hello.dir/all:
 	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/depend
 	$(MAKE) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles --progress-num=1,2 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan/build/CMakeFiles --progress-num=1,2 "Built target hello"
 .PHONY : CMakeFiles/hello.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/hello.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hello.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hello.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/my_robot/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/derektan/Desktop/robotics_software_engineer_udacity/gazebo/gazebo_project_derektan/build/CMakeFiles 0
 .PHONY : CMakeFiles/hello.dir/rule
 
 # Convenience name for target.
