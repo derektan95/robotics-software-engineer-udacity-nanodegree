@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7dfb5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7dfb5.dir/build.make CMakeFiles/cmTC_7dfb5.dir/build
+make[1]: Entering directory '/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7dfb5.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7dfb5.dir/CheckSymbolExists.c.o   -c /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7dfb5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7dfb5.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7dfb5.dir/CheckSymbolExists.c.o  -o cmTC_7dfb5 
+CMakeFiles/cmTC_7dfb5.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7dfb5.dir/build.make:97: recipe for target 'cmTC_7dfb5' failed
+make[1]: *** [cmTC_7dfb5] Error 1
+make[1]: Leaving directory '/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7dfb5/fast' failed
+make: *** [cmTC_7dfb5/fast] Error 2
+
+File /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c2648/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c2648.dir/build.make CMakeFiles/cmTC_c2648.dir/build
+make[1]: Entering directory '/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c2648.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c2648.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c2648
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2648.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c2648.dir/CheckFunctionExists.c.o  -o cmTC_c2648 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c2648.dir/build.make:97: recipe for target 'cmTC_c2648' failed
+make[1]: *** [cmTC_c2648] Error 1
+make[1]: Leaving directory '/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c2648/fast' failed
+make: *** [cmTC_c2648/fast] Error 2
+
+

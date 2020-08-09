@@ -1,0 +1,8 @@
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/install
+
+Name: simple_arm
+Description: Description of simple_arm
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
