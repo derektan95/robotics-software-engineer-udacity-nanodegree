@@ -376,6 +376,19 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named simple_mover
+
+# Build rule for target.
+simple_mover: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_mover
+.PHONY : simple_mover
+
+# fast build rule for target.
+simple_mover/fast:
+	$(MAKE) -f simple_arm/CMakeFiles/simple_mover.dir/build.make simple_arm/CMakeFiles/simple_mover.dir/build
+.PHONY : simple_mover/fast
+
+#=============================================================================
 # Target rules for targets named controller_manager_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -573,6 +586,7 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... controller_manager_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... simple_mover"
 	@echo "... controller_manager_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
