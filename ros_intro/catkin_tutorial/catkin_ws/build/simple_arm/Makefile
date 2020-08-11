@@ -68,18 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -123,6 +111,18 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target test
 test:
@@ -663,6 +663,21 @@ arm_mover/fast:
 .PHONY : arm_mover/fast
 
 # Convenience name for target.
+simple_arm/CMakeFiles/look_away.dir/rule:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 simple_arm/CMakeFiles/look_away.dir/rule
+.PHONY : simple_arm/CMakeFiles/look_away.dir/rule
+
+# Convenience name for target.
+look_away: simple_arm/CMakeFiles/look_away.dir/rule
+
+.PHONY : look_away
+
+# fast build rule for target.
+look_away/fast:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f simple_arm/CMakeFiles/look_away.dir/build.make simple_arm/CMakeFiles/look_away.dir/build
+.PHONY : look_away/fast
+
+# Convenience name for target.
 simple_arm/CMakeFiles/simple_arm_genpy.dir/rule:
 	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 simple_arm/CMakeFiles/simple_arm_genpy.dir/rule
 .PHONY : simple_arm/CMakeFiles/simple_arm_genpy.dir/rule
@@ -704,6 +719,33 @@ src/arm_mover.cpp.s:
 	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f simple_arm/CMakeFiles/arm_mover.dir/build.make simple_arm/CMakeFiles/arm_mover.dir/src/arm_mover.cpp.s
 .PHONY : src/arm_mover.cpp.s
 
+src/look_away.o: src/look_away.cpp.o
+
+.PHONY : src/look_away.o
+
+# target to build an object file
+src/look_away.cpp.o:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f simple_arm/CMakeFiles/look_away.dir/build.make simple_arm/CMakeFiles/look_away.dir/src/look_away.cpp.o
+.PHONY : src/look_away.cpp.o
+
+src/look_away.i: src/look_away.cpp.i
+
+.PHONY : src/look_away.i
+
+# target to preprocess a source file
+src/look_away.cpp.i:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f simple_arm/CMakeFiles/look_away.dir/build.make simple_arm/CMakeFiles/look_away.dir/src/look_away.cpp.i
+.PHONY : src/look_away.cpp.i
+
+src/look_away.s: src/look_away.cpp.s
+
+.PHONY : src/look_away.s
+
+# target to generate assembly for a file
+src/look_away.cpp.s:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/build && $(MAKE) -f simple_arm/CMakeFiles/look_away.dir/build.make simple_arm/CMakeFiles/look_away.dir/src/look_away.cpp.s
+.PHONY : src/look_away.cpp.s
+
 src/simple_mover.o: src/simple_mover.cpp.o
 
 .PHONY : src/simple_mover.o
@@ -738,14 +780,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
-	@echo "... edit_cache"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
@@ -776,11 +817,16 @@ help:
 	@echo "... simple_arm_generate_messages_nodejs"
 	@echo "... simple_arm_gennodejs"
 	@echo "... arm_mover"
+	@echo "... install/local"
+	@echo "... look_away"
 	@echo "... simple_arm_genpy"
 	@echo "... test"
 	@echo "... src/arm_mover.o"
 	@echo "... src/arm_mover.i"
 	@echo "... src/arm_mover.s"
+	@echo "... src/look_away.o"
+	@echo "... src/look_away.i"
+	@echo "... src/look_away.s"
 	@echo "... src/simple_mover.o"
 	@echo "... src/simple_mover.i"
 	@echo "... src/simple_mover.s"
