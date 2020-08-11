@@ -3,6 +3,6 @@ prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catki
 Name: simple_arm
 Description: Description of simple_arm
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/catkin_tutorial/catkin_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: 
