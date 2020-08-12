@@ -11,6 +11,70 @@
   </joint>
 
 
+  <!-- CHASSIS -->
+  <link name='chassis'>
+    <pose>0 0 0.1 0 0 0</pose>
+
+    <inertial>
+      <mass value="15.0"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="0.1" ixy="0" ixz="0"
+          iyy="0.1" iyz="0"
+          izz="0.1"
+      />
+    </inertial>
+
+    <collision name='collision'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+    </collision>
+
+    <visual name='chassis_visual'>
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size=".4 .2 .1"/>
+      </geometry>
+    </visual>
+
+
+    <!-- BACK CASTER -->
+    <collision name='back_caster_collision'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.0499"/>
+      </geometry>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+
+
+    <!-- FRONT CASTER -->
+    <collision name='front_caster_collision'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.0499"/>
+      </geometry>
+    </collision>
+
+    <visual name='front_caster_visual'>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+
+  <!-- LEFT WHEEL -->
   <link name="left_wheel">
     <pose>0 0 0 0 0 0</pose>
 
@@ -49,6 +113,7 @@
   </joint>
 
 
+  <!-- RIGHT WHEEL -->
   <link name="right_wheel">
     <pose>0 0 0 0 0 0</pose>
     
@@ -88,63 +153,45 @@
   </joint>
 
 
-  <link name='chassis'>
-    <pose>0 0 0.1 0 0 0</pose>
-
+  <!-- CAMERA -->
+  <link name="camera">
+    <pose>0 0 0 0 0 0</pose>
+    
     <inertial>
-      <mass value="15.0"/>
-      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0 0" rpy=" 0, 0, 0"/>
       <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
       />
     </inertial>
 
-    <collision name='collision'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
+    <collision name='camera_collision'>
+      <origin xyz="0 0 0" rpy=" 0, 0, 0"/> 
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size="0.05 0.05 0.05" />
       </geometry>
     </collision>
 
-    <visual name='chassis_visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+    <visual name='camera_visual'>
+      <origin xyz="0 0 0" rpy=" 0, 0, 0"/>
       <geometry>
-        <box size=".4 .2 .1"/>
-      </geometry>
-    </visual>
-
-
-    <collision name='back_caster_collision'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.0499"/>
-      </geometry>
-    </collision>
-
-    <visual name='back_caster_visual'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
-      </geometry>
-    </visual>
-
-    <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.0499"/>
-      </geometry>
-    </collision>
-
-    <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.05"/>
+        <box size="0.05 0.05 0.05" />
       </geometry>
     </visual>
 
   </link>
+
+  <joint type="fixed" name="camera_joint">
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+    <child link="camera"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
+
 
 </robot>
 
