@@ -2,6 +2,22 @@
 
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- COLORS -->
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Gray</material>
+  </gazebo>
+  <gazebo reference="chassis">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="camera">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  
+  
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
@@ -192,6 +208,46 @@
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
+
+
+  <!-- LIDAR -->
+  <link name="hokuyo">
+    <pose>0 0 0 0 0 0</pose>
+    
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0.0 0 0" rpy=" 0, 0, 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <collision name='hokuyo_collision'>
+      <origin xyz="0 0 0" rpy=" 0, 0, 0"/> 
+      <geometry>
+        <box size="0.1 0.1 0.1" />
+      </geometry>
+    </collision>
+
+    <visual name='hokuyo_visual'>
+      <origin xyz="0 0 0" rpy=" 0, 0, 0"/>
+      <geometry>
+        <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="fixed" name="hokuyo_joint">
+    <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+    <child link="hokuyo"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <dynamics damping="1.0" friction="1.0"/>
+  </joint>
 
 </robot>
 
