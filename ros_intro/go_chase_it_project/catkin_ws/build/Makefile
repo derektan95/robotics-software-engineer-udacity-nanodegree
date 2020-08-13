@@ -376,6 +376,19 @@ ball_chaser_generate_messages_cpp/fast:
 .PHONY : ball_chaser_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named process_image
+
+# Build rule for target.
+process_image: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 process_image
+.PHONY : process_image
+
+# fast build rule for target.
+process_image/fast:
+	$(MAKE) -f ball_chaser/CMakeFiles/process_image.dir/build.make ball_chaser/CMakeFiles/process_image.dir/build
+.PHONY : process_image/fast
+
+#=============================================================================
 # Target rules for targets named _ball_chaser_generate_messages_check_deps_DriveToTarget
 
 # Build rule for target.
@@ -690,6 +703,7 @@ help:
 	@echo "... ball_chaser_generate_messages_eus"
 	@echo "... ball_chaser_gencpp"
 	@echo "... ball_chaser_generate_messages_cpp"
+	@echo "... process_image"
 	@echo "... _ball_chaser_generate_messages_check_deps_DriveToTarget"
 	@echo "... ball_chaser_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"

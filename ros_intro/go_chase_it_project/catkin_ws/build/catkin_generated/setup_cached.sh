@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD='/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/build'
-export PYTHONPATH="/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
