@@ -25,19 +25,20 @@ void drive_robot(float lin_x, float ang_z)
 // This callback function continuously executes and reads the image data
 void process_image_callback(const sensor_msgs::Image img)
 {
-
     int white_pixel = 255;
     float linear_vel = 0.25;
     float turning_speed = 0.25;
+    bool has_white_pixel = false;
 
     // TODO: Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image
     // Depending on the white ball position, call the drive_bot function and pass velocities to it
     // Request a stop when there's no white ball seen by the camera
+    // NOTE: Pixels are arranged in [RGB RGB RGB ...]
 
     // Loop through each pixel in the image and check if its equal to the first one
-    for (int i = 0; i < img.height * img.step; i++) {
-        if (img.data[i] == 255) {
+    for (int i = 0; i < img.height * img.step; i+=3) {
+        if (img.data[i] == 255 && img.data[i+1] == 255 && img.data[i+2] == 255 ) {
             
             // if left side of screen
             if (i % img.step <= (img.step / 3))
@@ -57,8 +58,15 @@ void process_image_callback(const sensor_msgs::Image img)
                 drive_robot(linear_vel, 0);
             }
             
+            has_white_pixel = true;
             break;
         }
+    }
+
+    // Stop robot if there are no white pixels on the screen
+    if (!has_white_pixel)
+    {
+        drive_robot(0, 0);
     }
 }
 
