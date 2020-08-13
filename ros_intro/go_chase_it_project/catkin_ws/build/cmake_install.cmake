@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/build/my_robot/cmake_install.cmake")
+  include("/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/build/ball_chaser/cmake_install.cmake")
 
 endif()
 
