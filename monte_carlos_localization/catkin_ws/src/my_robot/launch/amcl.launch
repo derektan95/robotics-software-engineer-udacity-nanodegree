@@ -7,14 +7,38 @@
     <!-- Adaptive Monte Carlos Localization (AMCL) node: Subscribe to topics for localization  -->
     <node name="amcl" pkg="amcl" type="amcl" output="screen">
         <remap from="scan" to="/scan"/>
-        <param name="odom_frame_id" value="odom"/>
-        <param name="odom_model_type" value="diff-corrected"/>
         <param name="base_frame_id" value="robot_footprint"/>
         <param name="global_frame_id" value="map"/>
 
-        <!-- Optional: If you choose to define initial pose here -->
+        <!-- If you choose to define initial pose here -->
         <param name="initial_pose_x" value="-2.0"/>
         <param name="initial_pose_y" value="4.0"/>
+        <param name="initial_pose_a" value="0.0"/>
+
+        <!-- Limits on particles used in AMCL -->
+        <param name="min_particles" value="100"/>
+        <param name="max_particles" value="5000"/>
+
+        <!-- AMCL Update Rate (d = translational, a = rotational) -->
+        <param name="update_min_d" value="0.1"/>
+        <param name="update_min_a" value="0.263"/>
+
+        <!-- Laser settings -->
+        <param name="laser_min_range" value="-1.0"/>
+        <param name="laser_max_range" value="-1.0"/>
+        <param name="laser_min_beams" value="30"/>
+        <param name="laser_z_hit" value="0.95"/>
+        <param name="laser_z_rand" value="0.05"/>
+        <param name="laser_model_type" value="likelihood_field"/>
+
+        <!-- Odometry Settings - alpha = noise error -->
+        <param name="odom_frame_id" value="odom"/>
+        <param name="odom_model_type" value="diff-corrected"/>
+        <param name="odom_alpha1" value="0.05"/>
+		<param name="odom_alpha2" value="0.05"/>
+		<param name="odom_alpha3" value="0.05"/>
+		<param name="odom_alpha4" value="0.05"/>
+        
     </node>
 
     <!-- MOVE BASE node: Specify goal position on map for bot to navigate to. Includes path planning module. -->
