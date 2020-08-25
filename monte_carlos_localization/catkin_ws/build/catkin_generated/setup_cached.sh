@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD='/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build'
-export ROS_PACKAGE_PATH='/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src:/opt/ros/melodic/share'
