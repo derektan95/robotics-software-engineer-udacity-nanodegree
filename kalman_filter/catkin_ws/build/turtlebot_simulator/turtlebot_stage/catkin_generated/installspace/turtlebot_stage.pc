@@ -1,0 +1,8 @@
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/kalman_filter/catkin_ws/install
+
+Name: turtlebot_stage
+Description: Description of turtlebot_stage
+Version: 2.2.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
