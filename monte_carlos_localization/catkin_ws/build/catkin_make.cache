@@ -1,2 +1,2 @@
-ball_chaser:my_robot
--DCATKIN_DEVEL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/install -G Unix Makefiles
+ball_chaser:my_robot:pgm_map_creator
+-DCATKIN_DEVEL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install -G Unix Makefiles

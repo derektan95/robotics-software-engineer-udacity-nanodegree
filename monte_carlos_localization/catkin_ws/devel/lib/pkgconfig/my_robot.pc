@@ -1,4 +1,4 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/devel
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel
 
 Name: my_robot
 Description: Description of my_robot
