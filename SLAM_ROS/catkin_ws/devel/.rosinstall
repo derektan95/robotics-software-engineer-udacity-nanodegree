@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/derektan/Desktop/robotics_software_engineer_udacity/SLAM_ROS/catkin_ws/devel/setup.sh
