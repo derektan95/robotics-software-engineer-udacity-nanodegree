@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/collision_map_creator.dir/src/collision_map_creator.cc.o"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel/lib/libcollision_map_creator.pdb"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel/lib/libcollision_map_creator.so"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/lib/libcollision_map_creator.pdb"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/lib/libcollision_map_creator.so"
 )
 
 # Per-language clean rules from dependency scanning.

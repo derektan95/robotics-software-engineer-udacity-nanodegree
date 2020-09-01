@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build
+CMAKE_BINARY_DIR = /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build
 
 # Utility rule file for ball_chaser_geneus.
 
@@ -63,10 +63,10 @@ ball_chaser/CMakeFiles/ball_chaser_geneus.dir/build: ball_chaser_geneus
 .PHONY : ball_chaser/CMakeFiles/ball_chaser_geneus.dir/build
 
 ball_chaser/CMakeFiles/ball_chaser_geneus.dir/clean:
-	cd /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/ball_chaser && $(CMAKE_COMMAND) -P CMakeFiles/ball_chaser_geneus.dir/cmake_clean.cmake
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/ball_chaser && $(CMAKE_COMMAND) -P CMakeFiles/ball_chaser_geneus.dir/cmake_clean.cmake
 .PHONY : ball_chaser/CMakeFiles/ball_chaser_geneus.dir/clean
 
 ball_chaser/CMakeFiles/ball_chaser_geneus.dir/depend:
-	cd /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src/ball_chaser /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/ball_chaser /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_geneus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src/ball_chaser /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/ball_chaser /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/ball_chaser/CMakeFiles/ball_chaser_geneus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ball_chaser/CMakeFiles/ball_chaser_geneus.dir/depend
 

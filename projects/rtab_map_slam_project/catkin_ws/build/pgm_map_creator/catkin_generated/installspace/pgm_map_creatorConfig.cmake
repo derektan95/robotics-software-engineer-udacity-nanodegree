@@ -67,14 +67,14 @@ set(pgm_map_creator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pgm_map_creator_SOURCE_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src/pgm_map_creator)
-  set(pgm_map_creator_DEVEL_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel)
+  set(pgm_map_creator_SOURCE_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src/pgm_map_creator)
+  set(pgm_map_creator_DEVEL_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel)
   set(pgm_map_creator_INSTALL_PREFIX "")
   set(pgm_map_creator_PREFIX ${pgm_map_creator_DEVEL_PREFIX})
 else()
   set(pgm_map_creator_SOURCE_PREFIX "")
   set(pgm_map_creator_DEVEL_PREFIX "")
-  set(pgm_map_creator_INSTALL_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install)
+  set(pgm_map_creator_INSTALL_PREFIX /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/install)
   set(pgm_map_creator_PREFIX ${pgm_map_creator_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install/lib;/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/install/lib;/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

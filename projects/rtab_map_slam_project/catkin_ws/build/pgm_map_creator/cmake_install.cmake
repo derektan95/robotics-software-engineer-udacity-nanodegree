@@ -1,8 +1,8 @@
-# Install script for directory: /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src/pgm_map_creator
+# Install script for directory: /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src/pgm_map_creator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,23 +38,23 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creator.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creator.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pgm_map_creator/cmake" TYPE FILE FILES
-    "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creatorConfig.cmake"
-    "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creatorConfig-version.cmake"
+    "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creatorConfig.cmake"
+    "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/pgm_map_creator/catkin_generated/installspace/pgm_map_creatorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pgm_map_creator" TYPE FILE FILES "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/src/pgm_map_creator/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pgm_map_creator" TYPE FILE FILES "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src/pgm_map_creator/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/pgm_map_creator/msgs/cmake_install.cmake")
+  include("/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/build/pgm_map_creator/msgs/cmake_install.cmake")
 
 endif()
 

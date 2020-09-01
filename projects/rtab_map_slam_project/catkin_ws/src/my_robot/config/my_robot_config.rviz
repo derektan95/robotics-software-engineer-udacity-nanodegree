@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /RobotModel1
         - /Map1
         - /Map2
       Splitter Ratio: 0.5

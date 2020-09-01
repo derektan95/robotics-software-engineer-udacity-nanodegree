@@ -1,4 +1,4 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel
 
 Name: pgm_map_creator
 Description: Description of pgm_map_creator

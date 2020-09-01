@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/devel/setup.sh
+    local-name: /home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/setup.sh
