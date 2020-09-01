@@ -31,7 +31,7 @@
   </link>
 
 
-  <!-- ROBOT FOOTPRINT -->  
+  <!-- ROBOT FOOTPRINT - Base Link -->  
   <link name="robot_footprint"></link>
 
   <joint name="robot_footprint_joint" type="fixed">
