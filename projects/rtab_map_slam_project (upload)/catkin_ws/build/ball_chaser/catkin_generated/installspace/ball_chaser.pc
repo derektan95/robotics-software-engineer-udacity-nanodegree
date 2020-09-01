@@ -1,8 +1,0 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/install
-
-Name: ball_chaser
-Description: Description of ball_chaser
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 
