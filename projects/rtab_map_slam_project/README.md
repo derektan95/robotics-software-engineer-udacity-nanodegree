@@ -19,3 +19,6 @@ roslaunch my_robot localization.launch
 # To view rtab-map viewer
 rtabmap-databaseViewer `PATH TO rtabmap.db`
 
+# Link to rtabmap.db:
+https://drive.google.com/file/d/1yS00_mxbgFH_AcY0oYGCuCbfETEl9Jv_/view?usp=sharing
+
