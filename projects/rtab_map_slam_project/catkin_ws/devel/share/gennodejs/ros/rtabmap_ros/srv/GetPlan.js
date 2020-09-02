@@ -92,14 +92,14 @@ class GetPlanRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    # Get a plan from the current position to the goal node or pose 
     
-    # The final node of the goal (set 0 to use pose instead)
+    
+    
     int32 goal_node
-    # The final pose of the goal position (used only if goalNodeId=0)
+    
     geometry_msgs/PoseStamped goal
     
-    # How many meters from the map's graph we can plan (0=infinite)
+    
     float32 tolerance
     
     ================================================================================
@@ -122,6 +122,8 @@ class GetPlanRequest {
     # time-handling sugar is provided by the client library
     time stamp
     #Frame this data is associated with
+    # 0: no frame
+    # 1: global frame
     string frame_id
     
     ================================================================================
@@ -256,6 +258,8 @@ class GetPlanResponse {
     # time-handling sugar is provided by the client library
     time stamp
     #Frame this data is associated with
+    # 0: no frame
+    # 1: global frame
     string frame_id
     
     ================================================================================

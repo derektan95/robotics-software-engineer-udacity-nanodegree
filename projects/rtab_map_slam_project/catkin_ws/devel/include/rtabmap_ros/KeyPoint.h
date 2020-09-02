@@ -87,25 +87,6 @@ ros::message_operations::Printer< ::rtabmap_ros::KeyPoint_<ContainerAllocator> >
 return s;
 }
 
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator==(const ::rtabmap_ros::KeyPoint_<ContainerAllocator1> & lhs, const ::rtabmap_ros::KeyPoint_<ContainerAllocator2> & rhs)
-{
-  return lhs.pt == rhs.pt &&
-    lhs.size == rhs.size &&
-    lhs.angle == rhs.angle &&
-    lhs.response == rhs.response &&
-    lhs.octave == rhs.octave &&
-    lhs.class_id == rhs.class_id;
-}
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator!=(const ::rtabmap_ros::KeyPoint_<ContainerAllocator1> & lhs, const ::rtabmap_ros::KeyPoint_<ContainerAllocator2> & rhs)
-{
-  return !(lhs == rhs);
-}
-
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -113,6 +94,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -177,33 +164,33 @@ struct Definition< ::rtabmap_ros::KeyPoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#class cv::KeyPoint\n"
-"#{\n"
-"#    Point2f pt;\n"
-"#    float size;\n"
-"#    float angle;\n"
-"#    float response;\n"
-"#    int octave;\n"
-"#    int class_id;\n"
-"#}\n"
-"\n"
-"Point2f pt\n"
-"float32 size\n"
-"float32 angle\n"
-"float32 response\n"
-"int32 octave\n"
-"int32 class_id\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/Point2f\n"
-"#class cv::Point2f\n"
-"#{\n"
-"#    float x;\n"
-"#    float y;\n"
-"#}\n"
-"\n"
-"float32 x\n"
-"float32 y\n"
-;
+    return "#class cv::KeyPoint\n\
+#{\n\
+#    Point2f pt;\n\
+#    float size;\n\
+#    float angle;\n\
+#    float response;\n\
+#    int octave;\n\
+#    int class_id;\n\
+#}\n\
+\n\
+Point2f pt\n\
+float32 size\n\
+float32 angle\n\
+float32 response\n\
+int32 octave\n\
+int32 class_id\n\
+================================================================================\n\
+MSG: rtabmap_ros/Point2f\n\
+#class cv::Point2f\n\
+#{\n\
+#    float x;\n\
+#    float y;\n\
+#}\n\
+\n\
+float32 x\n\
+float32 y\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::KeyPoint_<ContainerAllocator>&) { return value(); }

@@ -3,10 +3,11 @@
 # keep symbol table as clean as possible by deleting all unnecessary symbols
 
 from os import path as os_path
-from pkgutil import extend_path
 from sys import path as sys_path
 
-__extended_path = '/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/python'.split(';')
+from pkgutil import extend_path
+
+__extended_path = "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/python".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

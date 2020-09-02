@@ -83,10 +83,10 @@
   "baadfb04a43ec26085eb7bebc9a80862")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetLabel-request>)))
   "Returns full string definition for message of type '<SetLabel-request>"
-  (cl:format cl:nil "#request~%# Set node_id = 0 to set label to last node~%int32 node_id~%string node_label~%~%~%"))
+  (cl:format cl:nil "~%~%int32 node_id~%string node_label~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetLabel-request)))
   "Returns full string definition for message of type 'SetLabel-request"
-  (cl:format cl:nil "#request~%# Set node_id = 0 to set label to last node~%int32 node_id~%string node_label~%~%~%"))
+  (cl:format cl:nil "~%~%int32 node_id~%string node_label~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetLabel-request>))
   (cl:+ 0
      4
@@ -132,10 +132,10 @@
   "baadfb04a43ec26085eb7bebc9a80862")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetLabel-response>)))
   "Returns full string definition for message of type '<SetLabel-response>"
-  (cl:format cl:nil "#response ~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetLabel-response)))
   "Returns full string definition for message of type 'SetLabel-response"
-  (cl:format cl:nil "#response ~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetLabel-response>))
   (cl:+ 0
 ))

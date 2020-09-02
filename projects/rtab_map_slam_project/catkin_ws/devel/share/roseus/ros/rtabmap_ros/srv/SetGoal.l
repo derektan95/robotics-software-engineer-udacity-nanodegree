@@ -173,18 +173,18 @@
 (setf (get rtabmap_ros::SetGoalRequest :md5sum-) "9ab4a370e8733a44f7bff8c581f9c5bf")
 (setf (get rtabmap_ros::SetGoalRequest :datatype-) "rtabmap_ros/SetGoalRequest")
 (setf (get rtabmap_ros::SetGoalRequest :definition-)
-      "#request
+      "
 
-# Set either node_id or node_label
+
 int32 node_id
 string node_label
 
-# optional: if not set, the base frame of the robot is used
+
 string frame_id
 
 ---
 
-#response 
+
 int32[] path_ids
 geometry_msgs/Pose[] path_poses
 float32 planning_time
@@ -215,18 +215,18 @@ float64 w
 (setf (get rtabmap_ros::SetGoalResponse :md5sum-) "9ab4a370e8733a44f7bff8c581f9c5bf")
 (setf (get rtabmap_ros::SetGoalResponse :datatype-) "rtabmap_ros/SetGoalResponse")
 (setf (get rtabmap_ros::SetGoalResponse :definition-)
-      "#request
+      "
 
-# Set either node_id or node_label
+
 int32 node_id
 string node_label
 
-# optional: if not set, the base frame of the robot is used
+
 string frame_id
 
 ---
 
-#response 
+
 int32[] path_ids
 geometry_msgs/Pose[] path_poses
 float32 planning_time

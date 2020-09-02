@@ -139,14 +139,14 @@
 (setf (get rtabmap_ros::GetPlanRequest :md5sum-) "11e7a6b05e2b36bab483bec069bf36b9")
 (setf (get rtabmap_ros::GetPlanRequest :datatype-) "rtabmap_ros/GetPlanRequest")
 (setf (get rtabmap_ros::GetPlanRequest :definition-)
-      "# Get a plan from the current position to the goal node or pose 
+      "
 
-# The final node of the goal (set 0 to use pose instead)
+
 int32 goal_node
-# The final pose of the goal position (used only if goalNodeId=0)
+
 geometry_msgs/PoseStamped goal
 
-# How many meters from the map's graph we can plan (0=infinite)
+
 float32 tolerance
 
 ================================================================================
@@ -169,6 +169,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================
@@ -218,6 +220,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================
@@ -246,14 +250,14 @@ float64 w
 (setf (get rtabmap_ros::GetPlanResponse :md5sum-) "11e7a6b05e2b36bab483bec069bf36b9")
 (setf (get rtabmap_ros::GetPlanResponse :datatype-) "rtabmap_ros/GetPlanResponse")
 (setf (get rtabmap_ros::GetPlanResponse :definition-)
-      "# Get a plan from the current position to the goal node or pose 
+      "
 
-# The final node of the goal (set 0 to use pose instead)
+
 int32 goal_node
-# The final pose of the goal position (used only if goalNodeId=0)
+
 geometry_msgs/PoseStamped goal
 
-# How many meters from the map's graph we can plan (0=infinite)
+
 float32 tolerance
 
 ================================================================================
@@ -276,6 +280,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================
@@ -325,6 +331,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================

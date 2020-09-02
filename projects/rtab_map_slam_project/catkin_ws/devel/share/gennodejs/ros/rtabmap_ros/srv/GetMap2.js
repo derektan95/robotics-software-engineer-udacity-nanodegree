@@ -144,7 +144,7 @@ class GetMap2Request {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     bool global
     bool optimized
     bool with_images
@@ -274,7 +274,7 @@ class GetMap2Response {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response
+    
     MapData data
     
     
@@ -310,6 +310,8 @@ class GetMap2Response {
     # time-handling sugar is provided by the client library
     time stamp
     #Frame this data is associated with
+    # 0: no frame
+    # 1: global frame
     string frame_id
     
     ================================================================================

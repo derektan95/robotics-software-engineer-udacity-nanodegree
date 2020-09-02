@@ -81,24 +81,6 @@ ros::message_operations::Printer< ::rtabmap_ros::GetNodeDataRequest_<ContainerAl
 return s;
 }
 
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator==(const ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator1> & lhs, const ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator2> & rhs)
-{
-  return lhs.ids == rhs.ids &&
-    lhs.images == rhs.images &&
-    lhs.scan == rhs.scan &&
-    lhs.grid == rhs.grid &&
-    lhs.user_data == rhs.user_data;
-}
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator!=(const ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator1> & lhs, const ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator2> & rhs)
-{
-  return !(lhs == rhs);
-}
-
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -106,6 +88,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -170,13 +158,13 @@ struct Definition< ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#request\n"
-"int32[] ids\n"
-"bool images\n"
-"bool scan\n"
-"bool grid\n"
-"bool user_data\n"
-;
+    return "\n\
+int32[] ids\n\
+bool images\n\
+bool scan\n\
+bool grid\n\
+bool user_data\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::GetNodeDataRequest_<ContainerAllocator>&) { return value(); }

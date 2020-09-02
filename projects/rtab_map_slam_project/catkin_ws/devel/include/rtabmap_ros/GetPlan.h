@@ -57,8 +57,8 @@ struct DataType< ::rtabmap_ros::GetPlan > {
 };
 
 
-// service_traits::MD5Sum< ::rtabmap_ros::GetPlanRequest> should match
-// service_traits::MD5Sum< ::rtabmap_ros::GetPlan >
+// service_traits::MD5Sum< ::rtabmap_ros::GetPlanRequest> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::GetPlan > 
 template<>
 struct MD5Sum< ::rtabmap_ros::GetPlanRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::rtabmap_ros::GetPlanRequest>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::GetPlanRequest> should match
-// service_traits::DataType< ::rtabmap_ros::GetPlan >
+// service_traits::DataType< ::rtabmap_ros::GetPlanRequest> should match 
+// service_traits::DataType< ::rtabmap_ros::GetPlan > 
 template<>
 struct DataType< ::rtabmap_ros::GetPlanRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::rtabmap_ros::GetPlanRequest>
   }
 };
 
-// service_traits::MD5Sum< ::rtabmap_ros::GetPlanResponse> should match
-// service_traits::MD5Sum< ::rtabmap_ros::GetPlan >
+// service_traits::MD5Sum< ::rtabmap_ros::GetPlanResponse> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::GetPlan > 
 template<>
 struct MD5Sum< ::rtabmap_ros::GetPlanResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::rtabmap_ros::GetPlanResponse>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::GetPlanResponse> should match
-// service_traits::DataType< ::rtabmap_ros::GetPlan >
+// service_traits::DataType< ::rtabmap_ros::GetPlanResponse> should match 
+// service_traits::DataType< ::rtabmap_ros::GetPlan > 
 template<>
 struct DataType< ::rtabmap_ros::GetPlanResponse>
 {

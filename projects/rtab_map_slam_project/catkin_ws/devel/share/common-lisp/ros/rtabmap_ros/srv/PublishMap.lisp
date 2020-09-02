@@ -73,10 +73,10 @@
   "6213f9f13cced23f4d224b22f59d839c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PublishMap-request>)))
   "Returns full string definition for message of type '<PublishMap-request>"
-  (cl:format cl:nil "#request~%bool global~%bool optimized~%bool graphOnly~%~%~%"))
+  (cl:format cl:nil "~%bool global~%bool optimized~%bool graphOnly~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PublishMap-request)))
   "Returns full string definition for message of type 'PublishMap-request"
-  (cl:format cl:nil "#request~%bool global~%bool optimized~%bool graphOnly~%~%~%"))
+  (cl:format cl:nil "~%bool global~%bool optimized~%bool graphOnly~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PublishMap-request>))
   (cl:+ 0
      1
@@ -124,10 +124,10 @@
   "6213f9f13cced23f4d224b22f59d839c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PublishMap-response>)))
   "Returns full string definition for message of type '<PublishMap-response>"
-  (cl:format cl:nil "#response~%~%~%~%"))
+  (cl:format cl:nil "~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PublishMap-response)))
   "Returns full string definition for message of type 'PublishMap-response"
-  (cl:format cl:nil "#response~%~%~%~%"))
+  (cl:format cl:nil "~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PublishMap-response>))
   (cl:+ 0
 ))

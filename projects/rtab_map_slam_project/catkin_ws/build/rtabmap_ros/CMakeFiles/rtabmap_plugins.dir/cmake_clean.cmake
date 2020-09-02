@@ -19,8 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.o"
   "CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.o"
   "CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.o"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/lib/librtabmap_plugins.pdb"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/projects/rtab_map_slam_project/catkin_ws/devel/lib/librtabmap_plugins.so"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/devel/lib/librtabmap_plugins.pdb"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/devel/lib/librtabmap_plugins.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -241,54 +241,6 @@ ros::message_operations::Printer< ::rtabmap_ros::NodeData_<ContainerAllocator> >
 return s;
 }
 
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator==(const ::rtabmap_ros::NodeData_<ContainerAllocator1> & lhs, const ::rtabmap_ros::NodeData_<ContainerAllocator2> & rhs)
-{
-  return lhs.id == rhs.id &&
-    lhs.mapId == rhs.mapId &&
-    lhs.weight == rhs.weight &&
-    lhs.stamp == rhs.stamp &&
-    lhs.label == rhs.label &&
-    lhs.pose == rhs.pose &&
-    lhs.groundTruthPose == rhs.groundTruthPose &&
-    lhs.gps == rhs.gps &&
-    lhs.image == rhs.image &&
-    lhs.depth == rhs.depth &&
-    lhs.fx == rhs.fx &&
-    lhs.fy == rhs.fy &&
-    lhs.cx == rhs.cx &&
-    lhs.cy == rhs.cy &&
-    lhs.width == rhs.width &&
-    lhs.height == rhs.height &&
-    lhs.baseline == rhs.baseline &&
-    lhs.localTransform == rhs.localTransform &&
-    lhs.laserScan == rhs.laserScan &&
-    lhs.laserScanMaxPts == rhs.laserScanMaxPts &&
-    lhs.laserScanMaxRange == rhs.laserScanMaxRange &&
-    lhs.laserScanFormat == rhs.laserScanFormat &&
-    lhs.laserScanLocalTransform == rhs.laserScanLocalTransform &&
-    lhs.userData == rhs.userData &&
-    lhs.grid_ground == rhs.grid_ground &&
-    lhs.grid_obstacles == rhs.grid_obstacles &&
-    lhs.grid_empty_cells == rhs.grid_empty_cells &&
-    lhs.grid_cell_size == rhs.grid_cell_size &&
-    lhs.grid_view_point == rhs.grid_view_point &&
-    lhs.wordIds == rhs.wordIds &&
-    lhs.wordKpts == rhs.wordKpts &&
-    lhs.wordPts == rhs.wordPts &&
-    lhs.wordDescriptors == rhs.wordDescriptors &&
-    lhs.globalDescriptors == rhs.globalDescriptors &&
-    lhs.env_sensors == rhs.env_sensors;
-}
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator!=(const ::rtabmap_ros::NodeData_<ContainerAllocator1> & lhs, const ::rtabmap_ros::NodeData_<ContainerAllocator2> & rhs)
-{
-  return !(lhs == rhs);
-}
-
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -296,6 +248,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -360,200 +318,202 @@ struct Definition< ::rtabmap_ros::NodeData_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n"
-"int32 id\n"
-"int32 mapId\n"
-"int32 weight\n"
-"float64 stamp\n"
-"string label\n"
-"\n"
-"# Pose from odometry not corrected\n"
-"geometry_msgs/Pose pose\n"
-"\n"
-"# Ground truth (optional)\n"
-"geometry_msgs/Pose groundTruthPose\n"
-"\n"
-"# GPS (optional)\n"
-"GPS gps\n"
-"\n"
-"# compressed image in /camera_link frame\n"
-"# use rtabmap::util3d::uncompressImage() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] image\n"
-"\n"
-"# compressed depth image in /camera_link frame\n"
-"# use rtabmap::util3d::uncompressImage() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] depth\n"
-"\n"
-"# Camera models\n"
-"float32[] fx\n"
-"float32[] fy\n"
-"float32[] cx\n"
-"float32[] cy\n"
-"float32[] width\n"
-"float32[] height\n"
-"float32 baseline\n"
-"# local transform (/base_link -> /camera_link)\n"
-"geometry_msgs/Transform[] localTransform\n"
-"\n"
-"# compressed 2D or 3D laser scan\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] laserScan\n"
-"int32 laserScanMaxPts\n"
-"float32 laserScanMaxRange\n"
-"int32 laserScanFormat\n"
-"# local transform (/base_link -> /base_laser)\n"
-"geometry_msgs/Transform laserScanLocalTransform\n"
-"\n"
-"# compressed user data\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] userData\n"
-"\n"
-"# compressed occupancy grid\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] grid_ground\n"
-"uint8[] grid_obstacles\n"
-"uint8[] grid_empty_cells\n"
-"float32 grid_cell_size\n"
-"Point3f grid_view_point\n"
-"\n"
-"# std::multimap<wordId, cv::Keypoint>\n"
-"# std::multimap<wordId, cv::Point3f>\n"
-"int32[] wordIds\n"
-"KeyPoint[] wordKpts\n"
-"Point3f[] wordPts\n"
-"# compressed descriptors\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] wordDescriptors\n"
-"\n"
-"GlobalDescriptor[] globalDescriptors\n"
-"\n"
-"EnvSensor[] env_sensors\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Pose\n"
-"# A representation of pose in free space, composed of position and orientation. \n"
-"Point position\n"
-"Quaternion orientation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Point\n"
-"# This contains the position of a point in free space\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Quaternion\n"
-"# This represents an orientation in free space in quaternion form.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"float64 w\n"
-"\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/GPS\n"
-"\n"
-"float64 stamp      # in seconds\n"
-"float64 longitude  # DD format\n"
-"float64 latitude   # DD format\n"
-"float64 altitude   # in meters\n"
-"float64 error      # in meters\n"
-"float64 bearing    # North 0->360 deg\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Transform\n"
-"# This represents the transform between two coordinate frames in free space.\n"
-"\n"
-"Vector3 translation\n"
-"Quaternion rotation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Vector3\n"
-"# This represents a vector in free space. \n"
-"# It is only meant to represent a direction. Therefore, it does not\n"
-"# make sense to apply a translation to it (e.g., when applying a \n"
-"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
-"# rotation). If you want your data to be translatable too, use the\n"
-"# geometry_msgs/Point message instead.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/Point3f\n"
-"#class cv::Point3f\n"
-"#{\n"
-"#    float x;\n"
-"#    float y;\n"
-"#    float z;\n"
-"#}\n"
-"\n"
-"float32 x\n"
-"float32 y\n"
-"float32 z\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/KeyPoint\n"
-"#class cv::KeyPoint\n"
-"#{\n"
-"#    Point2f pt;\n"
-"#    float size;\n"
-"#    float angle;\n"
-"#    float response;\n"
-"#    int octave;\n"
-"#    int class_id;\n"
-"#}\n"
-"\n"
-"Point2f pt\n"
-"float32 size\n"
-"float32 angle\n"
-"float32 response\n"
-"int32 octave\n"
-"int32 class_id\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/Point2f\n"
-"#class cv::Point2f\n"
-"#{\n"
-"#    float x;\n"
-"#    float y;\n"
-"#}\n"
-"\n"
-"float32 x\n"
-"float32 y\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/GlobalDescriptor\n"
-"\n"
-"Header header\n"
-"\n"
-"# compressed global descriptor\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"int32 type\n"
-"uint8[] info\n"
-"uint8[] data\n"
-"================================================================================\n"
-"MSG: std_msgs/Header\n"
-"# Standard metadata for higher-level stamped data types.\n"
-"# This is generally used to communicate timestamped data \n"
-"# in a particular coordinate frame.\n"
-"# \n"
-"# sequence ID: consecutively increasing ID \n"
-"uint32 seq\n"
-"#Two-integer timestamp that is expressed as:\n"
-"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
-"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
-"# time-handling sugar is provided by the client library\n"
-"time stamp\n"
-"#Frame this data is associated with\n"
-"string frame_id\n"
-"\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/EnvSensor\n"
-"\n"
-"Header header\n"
-"\n"
-"# EnvSensor\n"
-"int32 type\n"
-"float64 value\n"
-;
+    return "\n\
+int32 id\n\
+int32 mapId\n\
+int32 weight\n\
+float64 stamp\n\
+string label\n\
+\n\
+# Pose from odometry not corrected\n\
+geometry_msgs/Pose pose\n\
+\n\
+# Ground truth (optional)\n\
+geometry_msgs/Pose groundTruthPose\n\
+\n\
+# GPS (optional)\n\
+GPS gps\n\
+\n\
+# compressed image in /camera_link frame\n\
+# use rtabmap::util3d::uncompressImage() from \"rtabmap/core/util3d.h\"\n\
+uint8[] image\n\
+\n\
+# compressed depth image in /camera_link frame\n\
+# use rtabmap::util3d::uncompressImage() from \"rtabmap/core/util3d.h\"\n\
+uint8[] depth\n\
+\n\
+# Camera models\n\
+float32[] fx\n\
+float32[] fy\n\
+float32[] cx\n\
+float32[] cy\n\
+float32[] width\n\
+float32[] height\n\
+float32 baseline\n\
+# local transform (/base_link -> /camera_link)\n\
+geometry_msgs/Transform[] localTransform\n\
+\n\
+# compressed 2D or 3D laser scan\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+uint8[] laserScan\n\
+int32 laserScanMaxPts\n\
+float32 laserScanMaxRange\n\
+int32 laserScanFormat\n\
+# local transform (/base_link -> /base_laser)\n\
+geometry_msgs/Transform laserScanLocalTransform\n\
+\n\
+# compressed user data\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+uint8[] userData\n\
+\n\
+# compressed occupancy grid\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+uint8[] grid_ground\n\
+uint8[] grid_obstacles\n\
+uint8[] grid_empty_cells\n\
+float32 grid_cell_size\n\
+Point3f grid_view_point\n\
+\n\
+# std::multimap<wordId, cv::Keypoint>\n\
+# std::multimap<wordId, cv::Point3f>\n\
+int32[] wordIds\n\
+KeyPoint[] wordKpts\n\
+Point3f[] wordPts\n\
+# compressed descriptors\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+uint8[] wordDescriptors\n\
+\n\
+GlobalDescriptor[] globalDescriptors\n\
+\n\
+EnvSensor[] env_sensors\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Pose\n\
+# A representation of pose in free space, composed of position and orientation. \n\
+Point position\n\
+Quaternion orientation\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Point\n\
+# This contains the position of a point in free space\n\
+float64 x\n\
+float64 y\n\
+float64 z\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Quaternion\n\
+# This represents an orientation in free space in quaternion form.\n\
+\n\
+float64 x\n\
+float64 y\n\
+float64 z\n\
+float64 w\n\
+\n\
+================================================================================\n\
+MSG: rtabmap_ros/GPS\n\
+\n\
+float64 stamp      # in seconds\n\
+float64 longitude  # DD format\n\
+float64 latitude   # DD format\n\
+float64 altitude   # in meters\n\
+float64 error      # in meters\n\
+float64 bearing    # North 0->360 deg\n\
+================================================================================\n\
+MSG: geometry_msgs/Transform\n\
+# This represents the transform between two coordinate frames in free space.\n\
+\n\
+Vector3 translation\n\
+Quaternion rotation\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Vector3\n\
+# This represents a vector in free space. \n\
+# It is only meant to represent a direction. Therefore, it does not\n\
+# make sense to apply a translation to it (e.g., when applying a \n\
+# generic rigid transformation to a Vector3, tf2 will only apply the\n\
+# rotation). If you want your data to be translatable too, use the\n\
+# geometry_msgs/Point message instead.\n\
+\n\
+float64 x\n\
+float64 y\n\
+float64 z\n\
+================================================================================\n\
+MSG: rtabmap_ros/Point3f\n\
+#class cv::Point3f\n\
+#{\n\
+#    float x;\n\
+#    float y;\n\
+#    float z;\n\
+#}\n\
+\n\
+float32 x\n\
+float32 y\n\
+float32 z\n\
+================================================================================\n\
+MSG: rtabmap_ros/KeyPoint\n\
+#class cv::KeyPoint\n\
+#{\n\
+#    Point2f pt;\n\
+#    float size;\n\
+#    float angle;\n\
+#    float response;\n\
+#    int octave;\n\
+#    int class_id;\n\
+#}\n\
+\n\
+Point2f pt\n\
+float32 size\n\
+float32 angle\n\
+float32 response\n\
+int32 octave\n\
+int32 class_id\n\
+================================================================================\n\
+MSG: rtabmap_ros/Point2f\n\
+#class cv::Point2f\n\
+#{\n\
+#    float x;\n\
+#    float y;\n\
+#}\n\
+\n\
+float32 x\n\
+float32 y\n\
+================================================================================\n\
+MSG: rtabmap_ros/GlobalDescriptor\n\
+\n\
+Header header\n\
+\n\
+# compressed global descriptor\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+int32 type\n\
+uint8[] info\n\
+uint8[] data\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
+\n\
+================================================================================\n\
+MSG: rtabmap_ros/EnvSensor\n\
+\n\
+Header header\n\
+\n\
+# EnvSensor\n\
+int32 type\n\
+float64 value\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::NodeData_<ContainerAllocator>&) { return value(); }

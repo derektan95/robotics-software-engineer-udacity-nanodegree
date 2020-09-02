@@ -57,8 +57,8 @@ struct DataType< ::rtabmap_ros::PublishMap > {
 };
 
 
-// service_traits::MD5Sum< ::rtabmap_ros::PublishMapRequest> should match
-// service_traits::MD5Sum< ::rtabmap_ros::PublishMap >
+// service_traits::MD5Sum< ::rtabmap_ros::PublishMapRequest> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::PublishMap > 
 template<>
 struct MD5Sum< ::rtabmap_ros::PublishMapRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::rtabmap_ros::PublishMapRequest>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::PublishMapRequest> should match
-// service_traits::DataType< ::rtabmap_ros::PublishMap >
+// service_traits::DataType< ::rtabmap_ros::PublishMapRequest> should match 
+// service_traits::DataType< ::rtabmap_ros::PublishMap > 
 template<>
 struct DataType< ::rtabmap_ros::PublishMapRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::rtabmap_ros::PublishMapRequest>
   }
 };
 
-// service_traits::MD5Sum< ::rtabmap_ros::PublishMapResponse> should match
-// service_traits::MD5Sum< ::rtabmap_ros::PublishMap >
+// service_traits::MD5Sum< ::rtabmap_ros::PublishMapResponse> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::PublishMap > 
 template<>
 struct MD5Sum< ::rtabmap_ros::PublishMapResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::rtabmap_ros::PublishMapResponse>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::PublishMapResponse> should match
-// service_traits::DataType< ::rtabmap_ros::PublishMap >
+// service_traits::DataType< ::rtabmap_ros::PublishMapResponse> should match 
+// service_traits::DataType< ::rtabmap_ros::PublishMap > 
 template<>
 struct DataType< ::rtabmap_ros::PublishMapResponse>
 {

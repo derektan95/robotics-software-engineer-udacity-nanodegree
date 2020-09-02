@@ -57,8 +57,8 @@ struct DataType< ::rtabmap_ros::ResetPose > {
 };
 
 
-// service_traits::MD5Sum< ::rtabmap_ros::ResetPoseRequest> should match
-// service_traits::MD5Sum< ::rtabmap_ros::ResetPose >
+// service_traits::MD5Sum< ::rtabmap_ros::ResetPoseRequest> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::ResetPose > 
 template<>
 struct MD5Sum< ::rtabmap_ros::ResetPoseRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::rtabmap_ros::ResetPoseRequest>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::ResetPoseRequest> should match
-// service_traits::DataType< ::rtabmap_ros::ResetPose >
+// service_traits::DataType< ::rtabmap_ros::ResetPoseRequest> should match 
+// service_traits::DataType< ::rtabmap_ros::ResetPose > 
 template<>
 struct DataType< ::rtabmap_ros::ResetPoseRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::rtabmap_ros::ResetPoseRequest>
   }
 };
 
-// service_traits::MD5Sum< ::rtabmap_ros::ResetPoseResponse> should match
-// service_traits::MD5Sum< ::rtabmap_ros::ResetPose >
+// service_traits::MD5Sum< ::rtabmap_ros::ResetPoseResponse> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::ResetPose > 
 template<>
 struct MD5Sum< ::rtabmap_ros::ResetPoseResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::rtabmap_ros::ResetPoseResponse>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::ResetPoseResponse> should match
-// service_traits::DataType< ::rtabmap_ros::ResetPose >
+// service_traits::DataType< ::rtabmap_ros::ResetPoseResponse> should match 
+// service_traits::DataType< ::rtabmap_ros::ResetPose > 
 template<>
 struct DataType< ::rtabmap_ros::ResetPoseResponse>
 {

@@ -57,8 +57,8 @@ struct DataType< ::rtabmap_ros::SetLabel > {
 };
 
 
-// service_traits::MD5Sum< ::rtabmap_ros::SetLabelRequest> should match
-// service_traits::MD5Sum< ::rtabmap_ros::SetLabel >
+// service_traits::MD5Sum< ::rtabmap_ros::SetLabelRequest> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::SetLabel > 
 template<>
 struct MD5Sum< ::rtabmap_ros::SetLabelRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::rtabmap_ros::SetLabelRequest>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::SetLabelRequest> should match
-// service_traits::DataType< ::rtabmap_ros::SetLabel >
+// service_traits::DataType< ::rtabmap_ros::SetLabelRequest> should match 
+// service_traits::DataType< ::rtabmap_ros::SetLabel > 
 template<>
 struct DataType< ::rtabmap_ros::SetLabelRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::rtabmap_ros::SetLabelRequest>
   }
 };
 
-// service_traits::MD5Sum< ::rtabmap_ros::SetLabelResponse> should match
-// service_traits::MD5Sum< ::rtabmap_ros::SetLabel >
+// service_traits::MD5Sum< ::rtabmap_ros::SetLabelResponse> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::SetLabel > 
 template<>
 struct MD5Sum< ::rtabmap_ros::SetLabelResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::rtabmap_ros::SetLabelResponse>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::SetLabelResponse> should match
-// service_traits::DataType< ::rtabmap_ros::SetLabel >
+// service_traits::DataType< ::rtabmap_ros::SetLabelResponse> should match 
+// service_traits::DataType< ::rtabmap_ros::SetLabel > 
 template<>
 struct DataType< ::rtabmap_ros::SetLabelResponse>
 {

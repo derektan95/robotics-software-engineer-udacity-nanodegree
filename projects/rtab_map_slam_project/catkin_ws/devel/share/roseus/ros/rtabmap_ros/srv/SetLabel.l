@@ -108,23 +108,23 @@
 (setf (get rtabmap_ros::SetLabelRequest :md5sum-) "baadfb04a43ec26085eb7bebc9a80862")
 (setf (get rtabmap_ros::SetLabelRequest :datatype-) "rtabmap_ros/SetLabelRequest")
 (setf (get rtabmap_ros::SetLabelRequest :definition-)
-      "#request
-# Set node_id = 0 to set label to last node
+      "
+
 int32 node_id
 string node_label
 ---
-#response 
+
 ")
 
 (setf (get rtabmap_ros::SetLabelResponse :md5sum-) "baadfb04a43ec26085eb7bebc9a80862")
 (setf (get rtabmap_ros::SetLabelResponse :datatype-) "rtabmap_ros/SetLabelResponse")
 (setf (get rtabmap_ros::SetLabelResponse :definition-)
-      "#request
-# Set node_id = 0 to set label to last node
+      "
+
 int32 node_id
 string node_label
 ---
-#response 
+
 ")
 
 

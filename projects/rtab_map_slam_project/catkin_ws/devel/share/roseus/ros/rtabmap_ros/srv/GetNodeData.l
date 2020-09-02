@@ -171,14 +171,14 @@
 (setf (get rtabmap_ros::GetNodeDataRequest :md5sum-) "910c3a3dc1c436519825ca723762df03")
 (setf (get rtabmap_ros::GetNodeDataRequest :datatype-) "rtabmap_ros/GetNodeDataRequest")
 (setf (get rtabmap_ros::GetNodeDataRequest :definition-)
-      "#request
+      "
 int32[] ids
 bool images
 bool scan
 bool grid
 bool user_data
 ---
-#response
+
 NodeData[] data
 
 
@@ -367,6 +367,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================
@@ -381,14 +383,14 @@ int32 type
 (setf (get rtabmap_ros::GetNodeDataResponse :md5sum-) "910c3a3dc1c436519825ca723762df03")
 (setf (get rtabmap_ros::GetNodeDataResponse :datatype-) "rtabmap_ros/GetNodeDataResponse")
 (setf (get rtabmap_ros::GetNodeDataResponse :definition-)
-      "#request
+      "
 int32[] ids
 bool images
 bool scan
 bool grid
 bool user_data
 ---
-#response
+
 NodeData[] data
 
 
@@ -577,6 +579,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================

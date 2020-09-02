@@ -58,7 +58,6 @@ ros::message_operations::Printer< ::rtabmap_ros::PublishMapResponse_<ContainerAl
 return s;
 }
 
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -66,6 +65,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -130,9 +135,9 @@ struct Definition< ::rtabmap_ros::PublishMapResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#response\n"
-"\n"
-;
+    return "\n\
+\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::PublishMapResponse_<ContainerAllocator>&) { return value(); }

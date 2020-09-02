@@ -124,9 +124,9 @@
 (setf (get rtabmap_ros::ListLabelsRequest :md5sum-) "eeaf81b9c58c5f0e5150e4704df1159c")
 (setf (get rtabmap_ros::ListLabelsRequest :datatype-) "rtabmap_ros/ListLabelsRequest")
 (setf (get rtabmap_ros::ListLabelsRequest :definition-)
-      "#request
+      "
 ---
-#response 
+
 int32[] ids
 string[] labels
 ")
@@ -134,9 +134,9 @@ string[] labels
 (setf (get rtabmap_ros::ListLabelsResponse :md5sum-) "eeaf81b9c58c5f0e5150e4704df1159c")
 (setf (get rtabmap_ros::ListLabelsResponse :datatype-) "rtabmap_ros/ListLabelsResponse")
 (setf (get rtabmap_ros::ListLabelsResponse :definition-)
-      "#request
+      "
 ---
-#response 
+
 int32[] ids
 string[] labels
 ")

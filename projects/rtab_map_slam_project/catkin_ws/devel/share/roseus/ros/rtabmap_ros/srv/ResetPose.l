@@ -152,7 +152,7 @@
 (setf (get rtabmap_ros::ResetPoseRequest :md5sum-) "3d5697f0c9e8859325238b57521f8f4e")
 (setf (get rtabmap_ros::ResetPoseRequest :datatype-) "rtabmap_ros/ResetPoseRequest")
 (setf (get rtabmap_ros::ResetPoseRequest :definition-)
-      "#request
+      "
 float32 x
 float32 y
 float32 z
@@ -160,13 +160,13 @@ float32 roll
 float32 pitch
 float32 yaw
 ---
-#response
+
 ")
 
 (setf (get rtabmap_ros::ResetPoseResponse :md5sum-) "3d5697f0c9e8859325238b57521f8f4e")
 (setf (get rtabmap_ros::ResetPoseResponse :datatype-) "rtabmap_ros/ResetPoseResponse")
 (setf (get rtabmap_ros::ResetPoseResponse :definition-)
-      "#request
+      "
 float32 x
 float32 y
 float32 z
@@ -174,7 +174,7 @@ float32 roll
 float32 pitch
 float32 yaw
 ---
-#response
+
 ")
 
 

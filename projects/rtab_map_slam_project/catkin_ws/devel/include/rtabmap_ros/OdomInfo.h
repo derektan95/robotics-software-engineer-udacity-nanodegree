@@ -277,61 +277,6 @@ ros::message_operations::Printer< ::rtabmap_ros::OdomInfo_<ContainerAllocator> >
 return s;
 }
 
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator==(const ::rtabmap_ros::OdomInfo_<ContainerAllocator1> & lhs, const ::rtabmap_ros::OdomInfo_<ContainerAllocator2> & rhs)
-{
-  return lhs.header == rhs.header &&
-    lhs.lost == rhs.lost &&
-    lhs.matches == rhs.matches &&
-    lhs.inliers == rhs.inliers &&
-    lhs.icpInliersRatio == rhs.icpInliersRatio &&
-    lhs.icpRotation == rhs.icpRotation &&
-    lhs.icpTranslation == rhs.icpTranslation &&
-    lhs.icpStructuralComplexity == rhs.icpStructuralComplexity &&
-    lhs.icpStructuralDistribution == rhs.icpStructuralDistribution &&
-    lhs.icpCorrespondences == rhs.icpCorrespondences &&
-    lhs.covariance == rhs.covariance &&
-    lhs.features == rhs.features &&
-    lhs.localMapSize == rhs.localMapSize &&
-    lhs.localScanMapSize == rhs.localScanMapSize &&
-    lhs.localKeyFrames == rhs.localKeyFrames &&
-    lhs.localBundleOutliers == rhs.localBundleOutliers &&
-    lhs.localBundleConstraints == rhs.localBundleConstraints &&
-    lhs.localBundleTime == rhs.localBundleTime &&
-    lhs.keyFrameAdded == rhs.keyFrameAdded &&
-    lhs.timeEstimation == rhs.timeEstimation &&
-    lhs.timeParticleFiltering == rhs.timeParticleFiltering &&
-    lhs.stamp == rhs.stamp &&
-    lhs.interval == rhs.interval &&
-    lhs.distanceTravelled == rhs.distanceTravelled &&
-    lhs.memoryUsage == rhs.memoryUsage &&
-    lhs.gravityRollError == rhs.gravityRollError &&
-    lhs.gravityPitchError == rhs.gravityPitchError &&
-    lhs.transform == rhs.transform &&
-    lhs.transformFiltered == rhs.transformFiltered &&
-    lhs.transformGroundTruth == rhs.transformGroundTruth &&
-    lhs.guessVelocity == rhs.guessVelocity &&
-    lhs.type == rhs.type &&
-    lhs.wordsKeys == rhs.wordsKeys &&
-    lhs.wordsValues == rhs.wordsValues &&
-    lhs.wordMatches == rhs.wordMatches &&
-    lhs.wordInliers == rhs.wordInliers &&
-    lhs.localMapKeys == rhs.localMapKeys &&
-    lhs.localMapValues == rhs.localMapValues &&
-    lhs.localScanMap == rhs.localScanMap &&
-    lhs.refCorners == rhs.refCorners &&
-    lhs.newCorners == rhs.newCorners &&
-    lhs.cornerInliers == rhs.cornerInliers;
-}
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator!=(const ::rtabmap_ros::OdomInfo_<ContainerAllocator1> & lhs, const ::rtabmap_ros::OdomInfo_<ContainerAllocator2> & rhs)
-{
-  return !(lhs == rhs);
-}
-
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -339,6 +284,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -403,153 +354,155 @@ struct Definition< ::rtabmap_ros::OdomInfo_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n"
-"Header header\n"
-"\n"
-"bool lost\n"
-"int32 matches\n"
-"int32 inliers\n"
-"float32 icpInliersRatio\n"
-"float32 icpRotation\n"
-"float32 icpTranslation\n"
-"float32 icpStructuralComplexity\n"
-"float32 icpStructuralDistribution\n"
-"int32 icpCorrespondences\n"
-"float64[36] covariance\n"
-"int32 features\n"
-"int32 localMapSize\n"
-"int32 localScanMapSize\n"
-"int32 localKeyFrames\n"
-"int32 localBundleOutliers\n"
-"int32 localBundleConstraints\n"
-"float32 localBundleTime\n"
-"bool keyFrameAdded\n"
-"float32 timeEstimation\n"
-"float32 timeParticleFiltering\n"
-"float32 stamp\n"
-"float32 interval\n"
-"float32 distanceTravelled\n"
-"int32 memoryUsage # MB\n"
-"float32 gravityRollError\n"
-"float32 gravityPitchError\n"
-"\n"
-"geometry_msgs/Transform transform\n"
-"geometry_msgs/Transform transformFiltered\n"
-"geometry_msgs/Transform transformGroundTruth\n"
-"geometry_msgs/Transform guessVelocity\n"
-"\n"
-"# 0=F2M, 1=F2F\n"
-"int32 type\n"
-"\n"
-"# F2M odometry\n"
-"#   std::multimap<int, cv::KeyPoint> words;\n"
-"#   std::vector<int> wordMatches;\n"
-"#   std::vector<int> wordInliers;\n"
-"int32[] wordsKeys\n"
-"KeyPoint[] wordsValues\n"
-"int32[] wordMatches\n"
-"int32[] wordInliers\n"
-"int32[] localMapKeys\n"
-"Point3f[] localMapValues\n"
-"\n"
-"# compressed local scan map data\n"
-"# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n"
-"uint8[] localScanMap\n"
-"\n"
-"# F2F odometry\n"
-"#   std::vector<cv::Point2f> refCorners;\n"
-"#   std::vector<cv::Point2f> newCorners;\n"
-"#   std::vector<int> cornerInliers;\n"
-"Point2f[] refCorners\n"
-"Point2f[] newCorners\n"
-"int32[] cornerInliers\n"
-"\n"
-"\n"
-"================================================================================\n"
-"MSG: std_msgs/Header\n"
-"# Standard metadata for higher-level stamped data types.\n"
-"# This is generally used to communicate timestamped data \n"
-"# in a particular coordinate frame.\n"
-"# \n"
-"# sequence ID: consecutively increasing ID \n"
-"uint32 seq\n"
-"#Two-integer timestamp that is expressed as:\n"
-"# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n"
-"# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n"
-"# time-handling sugar is provided by the client library\n"
-"time stamp\n"
-"#Frame this data is associated with\n"
-"string frame_id\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Transform\n"
-"# This represents the transform between two coordinate frames in free space.\n"
-"\n"
-"Vector3 translation\n"
-"Quaternion rotation\n"
-"\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Vector3\n"
-"# This represents a vector in free space. \n"
-"# It is only meant to represent a direction. Therefore, it does not\n"
-"# make sense to apply a translation to it (e.g., when applying a \n"
-"# generic rigid transformation to a Vector3, tf2 will only apply the\n"
-"# rotation). If you want your data to be translatable too, use the\n"
-"# geometry_msgs/Point message instead.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"================================================================================\n"
-"MSG: geometry_msgs/Quaternion\n"
-"# This represents an orientation in free space in quaternion form.\n"
-"\n"
-"float64 x\n"
-"float64 y\n"
-"float64 z\n"
-"float64 w\n"
-"\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/KeyPoint\n"
-"#class cv::KeyPoint\n"
-"#{\n"
-"#    Point2f pt;\n"
-"#    float size;\n"
-"#    float angle;\n"
-"#    float response;\n"
-"#    int octave;\n"
-"#    int class_id;\n"
-"#}\n"
-"\n"
-"Point2f pt\n"
-"float32 size\n"
-"float32 angle\n"
-"float32 response\n"
-"int32 octave\n"
-"int32 class_id\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/Point2f\n"
-"#class cv::Point2f\n"
-"#{\n"
-"#    float x;\n"
-"#    float y;\n"
-"#}\n"
-"\n"
-"float32 x\n"
-"float32 y\n"
-"================================================================================\n"
-"MSG: rtabmap_ros/Point3f\n"
-"#class cv::Point3f\n"
-"#{\n"
-"#    float x;\n"
-"#    float y;\n"
-"#    float z;\n"
-"#}\n"
-"\n"
-"float32 x\n"
-"float32 y\n"
-"float32 z\n"
-;
+    return "\n\
+Header header\n\
+\n\
+bool lost\n\
+int32 matches\n\
+int32 inliers\n\
+float32 icpInliersRatio\n\
+float32 icpRotation\n\
+float32 icpTranslation\n\
+float32 icpStructuralComplexity\n\
+float32 icpStructuralDistribution\n\
+int32 icpCorrespondences\n\
+float64[36] covariance\n\
+int32 features\n\
+int32 localMapSize\n\
+int32 localScanMapSize\n\
+int32 localKeyFrames\n\
+int32 localBundleOutliers\n\
+int32 localBundleConstraints\n\
+float32 localBundleTime\n\
+bool keyFrameAdded\n\
+float32 timeEstimation\n\
+float32 timeParticleFiltering\n\
+float32 stamp\n\
+float32 interval\n\
+float32 distanceTravelled\n\
+int32 memoryUsage # MB\n\
+float32 gravityRollError\n\
+float32 gravityPitchError\n\
+\n\
+geometry_msgs/Transform transform\n\
+geometry_msgs/Transform transformFiltered\n\
+geometry_msgs/Transform transformGroundTruth\n\
+geometry_msgs/Transform guessVelocity\n\
+\n\
+# 0=F2M, 1=F2F\n\
+int32 type\n\
+\n\
+# F2M odometry\n\
+#   std::multimap<int, cv::KeyPoint> words;\n\
+#   std::vector<int> wordMatches;\n\
+#   std::vector<int> wordInliers;\n\
+int32[] wordsKeys\n\
+KeyPoint[] wordsValues\n\
+int32[] wordMatches\n\
+int32[] wordInliers\n\
+int32[] localMapKeys\n\
+Point3f[] localMapValues\n\
+\n\
+# compressed local scan map data\n\
+# use rtabmap::util3d::uncompressData() from \"rtabmap/core/util3d.h\"\n\
+uint8[] localScanMap\n\
+\n\
+# F2F odometry\n\
+#   std::vector<cv::Point2f> refCorners;\n\
+#   std::vector<cv::Point2f> newCorners;\n\
+#   std::vector<int> cornerInliers;\n\
+Point2f[] refCorners\n\
+Point2f[] newCorners\n\
+int32[] cornerInliers\n\
+\n\
+\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Transform\n\
+# This represents the transform between two coordinate frames in free space.\n\
+\n\
+Vector3 translation\n\
+Quaternion rotation\n\
+\n\
+================================================================================\n\
+MSG: geometry_msgs/Vector3\n\
+# This represents a vector in free space. \n\
+# It is only meant to represent a direction. Therefore, it does not\n\
+# make sense to apply a translation to it (e.g., when applying a \n\
+# generic rigid transformation to a Vector3, tf2 will only apply the\n\
+# rotation). If you want your data to be translatable too, use the\n\
+# geometry_msgs/Point message instead.\n\
+\n\
+float64 x\n\
+float64 y\n\
+float64 z\n\
+================================================================================\n\
+MSG: geometry_msgs/Quaternion\n\
+# This represents an orientation in free space in quaternion form.\n\
+\n\
+float64 x\n\
+float64 y\n\
+float64 z\n\
+float64 w\n\
+\n\
+================================================================================\n\
+MSG: rtabmap_ros/KeyPoint\n\
+#class cv::KeyPoint\n\
+#{\n\
+#    Point2f pt;\n\
+#    float size;\n\
+#    float angle;\n\
+#    float response;\n\
+#    int octave;\n\
+#    int class_id;\n\
+#}\n\
+\n\
+Point2f pt\n\
+float32 size\n\
+float32 angle\n\
+float32 response\n\
+int32 octave\n\
+int32 class_id\n\
+================================================================================\n\
+MSG: rtabmap_ros/Point2f\n\
+#class cv::Point2f\n\
+#{\n\
+#    float x;\n\
+#    float y;\n\
+#}\n\
+\n\
+float32 x\n\
+float32 y\n\
+================================================================================\n\
+MSG: rtabmap_ros/Point3f\n\
+#class cv::Point3f\n\
+#{\n\
+#    float x;\n\
+#    float y;\n\
+#    float z;\n\
+#}\n\
+\n\
+float32 x\n\
+float32 y\n\
+float32 z\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::OdomInfo_<ContainerAllocator>&) { return value(); }

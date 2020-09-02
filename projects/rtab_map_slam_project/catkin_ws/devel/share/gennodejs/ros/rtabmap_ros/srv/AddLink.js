@@ -67,7 +67,7 @@ class AddLinkRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     Link link
     
     ================================================================================
@@ -172,7 +172,7 @@ class AddLinkResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response
+    
     
     `;
   }

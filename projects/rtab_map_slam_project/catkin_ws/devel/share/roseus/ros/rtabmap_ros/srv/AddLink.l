@@ -101,7 +101,7 @@
 (setf (get rtabmap_ros::AddLinkRequest :md5sum-) "050728e3c25a15bf78d487d6aafab152")
 (setf (get rtabmap_ros::AddLinkRequest :datatype-) "rtabmap_ros/AddLinkRequest")
 (setf (get rtabmap_ros::AddLinkRequest :definition-)
-      "#request
+      "
 Link link
 
 ================================================================================
@@ -148,13 +148,13 @@ float64 y
 float64 z
 float64 w
 ---
-#response
+
 ")
 
 (setf (get rtabmap_ros::AddLinkResponse :md5sum-) "050728e3c25a15bf78d487d6aafab152")
 (setf (get rtabmap_ros::AddLinkResponse :datatype-) "rtabmap_ros/AddLinkResponse")
 (setf (get rtabmap_ros::AddLinkResponse :definition-)
-      "#request
+      "
 Link link
 
 ================================================================================
@@ -201,7 +201,7 @@ float64 y
 float64 z
 float64 w
 ---
-#response
+
 ")
 
 

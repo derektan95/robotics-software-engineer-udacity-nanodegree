@@ -113,7 +113,7 @@ class GetNodeDataRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     int32[] ids
     bool images
     bool scan
@@ -230,7 +230,7 @@ class GetNodeDataResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response
+    
     NodeData[] data
     
     
@@ -419,6 +419,8 @@ class GetNodeDataResponse {
     # time-handling sugar is provided by the client library
     time stamp
     #Frame this data is associated with
+    # 0: no frame
+    # 1: global frame
     string frame_id
     
     ================================================================================

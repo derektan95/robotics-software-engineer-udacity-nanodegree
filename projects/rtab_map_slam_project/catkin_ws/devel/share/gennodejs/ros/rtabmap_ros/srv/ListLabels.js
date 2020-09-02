@@ -55,7 +55,7 @@ class ListLabelsRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     
     `;
   }
@@ -135,7 +135,7 @@ class ListLabelsResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response 
+    
     int32[] ids
     string[] labels
     

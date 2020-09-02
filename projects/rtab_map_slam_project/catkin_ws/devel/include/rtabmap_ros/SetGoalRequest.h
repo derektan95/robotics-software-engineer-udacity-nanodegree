@@ -71,22 +71,6 @@ ros::message_operations::Printer< ::rtabmap_ros::SetGoalRequest_<ContainerAlloca
 return s;
 }
 
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator==(const ::rtabmap_ros::SetGoalRequest_<ContainerAllocator1> & lhs, const ::rtabmap_ros::SetGoalRequest_<ContainerAllocator2> & rhs)
-{
-  return lhs.node_id == rhs.node_id &&
-    lhs.node_label == rhs.node_label &&
-    lhs.frame_id == rhs.frame_id;
-}
-
-template<typename ContainerAllocator1, typename ContainerAllocator2>
-bool operator!=(const ::rtabmap_ros::SetGoalRequest_<ContainerAllocator1> & lhs, const ::rtabmap_ros::SetGoalRequest_<ContainerAllocator2> & rhs)
-{
-  return !(lhs == rhs);
-}
-
-
 } // namespace rtabmap_ros
 
 namespace ros
@@ -94,6 +78,12 @@ namespace ros
 namespace message_traits
 {
 
+
+
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
+// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'rtabmap_ros': ['/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/rtab_map_slam_project/catkin_ws/src/rtabmap_ros/msg']}
+
+// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -158,16 +148,16 @@ struct Definition< ::rtabmap_ros::SetGoalRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#request\n"
-"\n"
-"# Set either node_id or node_label\n"
-"int32 node_id\n"
-"string node_label\n"
-"\n"
-"# optional: if not set, the base frame of the robot is used\n"
-"string frame_id\n"
-"\n"
-;
+    return "\n\
+\n\
+\n\
+int32 node_id\n\
+string node_label\n\
+\n\
+\n\
+string frame_id\n\
+\n\
+";
   }
 
   static const char* value(const ::rtabmap_ros::SetGoalRequest_<ContainerAllocator>&) { return value(); }

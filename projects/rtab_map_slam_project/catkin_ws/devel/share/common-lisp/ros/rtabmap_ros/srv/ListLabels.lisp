@@ -38,10 +38,10 @@
   "eeaf81b9c58c5f0e5150e4704df1159c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ListLabels-request>)))
   "Returns full string definition for message of type '<ListLabels-request>"
-  (cl:format cl:nil "#request~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ListLabels-request)))
   "Returns full string definition for message of type 'ListLabels-request"
-  (cl:format cl:nil "#request~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ListLabels-request>))
   (cl:+ 0
 ))
@@ -156,10 +156,10 @@
   "eeaf81b9c58c5f0e5150e4704df1159c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ListLabels-response>)))
   "Returns full string definition for message of type '<ListLabels-response>"
-  (cl:format cl:nil "#response ~%int32[] ids~%string[] labels~%~%~%"))
+  (cl:format cl:nil "~%int32[] ids~%string[] labels~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ListLabels-response)))
   "Returns full string definition for message of type 'ListLabels-response"
-  (cl:format cl:nil "#response ~%int32[] ids~%string[] labels~%~%~%"))
+  (cl:format cl:nil "~%int32[] ids~%string[] labels~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ListLabels-response>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'ids) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))

@@ -163,10 +163,10 @@
   "3d5697f0c9e8859325238b57521f8f4e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ResetPose-request>)))
   "Returns full string definition for message of type '<ResetPose-request>"
-  (cl:format cl:nil "#request~%float32 x~%float32 y~%float32 z~%float32 roll~%float32 pitch~%float32 yaw~%~%~%"))
+  (cl:format cl:nil "~%float32 x~%float32 y~%float32 z~%float32 roll~%float32 pitch~%float32 yaw~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ResetPose-request)))
   "Returns full string definition for message of type 'ResetPose-request"
-  (cl:format cl:nil "#request~%float32 x~%float32 y~%float32 z~%float32 roll~%float32 pitch~%float32 yaw~%~%~%"))
+  (cl:format cl:nil "~%float32 x~%float32 y~%float32 z~%float32 roll~%float32 pitch~%float32 yaw~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ResetPose-request>))
   (cl:+ 0
      4
@@ -220,10 +220,10 @@
   "3d5697f0c9e8859325238b57521f8f4e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ResetPose-response>)))
   "Returns full string definition for message of type '<ResetPose-response>"
-  (cl:format cl:nil "#response~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ResetPose-response)))
   "Returns full string definition for message of type 'ResetPose-response"
-  (cl:format cl:nil "#response~%~%~%"))
+  (cl:format cl:nil "~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ResetPose-response>))
   (cl:+ 0
 ))

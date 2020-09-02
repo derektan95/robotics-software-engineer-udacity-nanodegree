@@ -121,7 +121,7 @@ class ResetPoseRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     float32 x
     float32 y
     float32 z
@@ -222,7 +222,7 @@ class ResetPoseResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response
+    
     
     `;
   }

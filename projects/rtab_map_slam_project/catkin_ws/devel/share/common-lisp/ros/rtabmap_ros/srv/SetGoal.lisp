@@ -107,10 +107,10 @@
   "9ab4a370e8733a44f7bff8c581f9c5bf")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetGoal-request>)))
   "Returns full string definition for message of type '<SetGoal-request>"
-  (cl:format cl:nil "#request~%~%# Set either node_id or node_label~%int32 node_id~%string node_label~%~%# optional: if not set, the base frame of the robot is used~%string frame_id~%~%~%~%"))
+  (cl:format cl:nil "~%~%~%int32 node_id~%string node_label~%~%~%string frame_id~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetGoal-request)))
   "Returns full string definition for message of type 'SetGoal-request"
-  (cl:format cl:nil "#request~%~%# Set either node_id or node_label~%int32 node_id~%string node_label~%~%# optional: if not set, the base frame of the robot is used~%string frame_id~%~%~%~%"))
+  (cl:format cl:nil "~%~%~%int32 node_id~%string node_label~%~%~%string frame_id~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetGoal-request>))
   (cl:+ 0
      4
@@ -241,10 +241,10 @@
   "9ab4a370e8733a44f7bff8c581f9c5bf")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetGoal-response>)))
   "Returns full string definition for message of type '<SetGoal-response>"
-  (cl:format cl:nil "~%#response ~%int32[] path_ids~%geometry_msgs/Pose[] path_poses~%float32 planning_time~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
+  (cl:format cl:nil "~%~%int32[] path_ids~%geometry_msgs/Pose[] path_poses~%float32 planning_time~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetGoal-response)))
   "Returns full string definition for message of type 'SetGoal-response"
-  (cl:format cl:nil "~%#response ~%int32[] path_ids~%geometry_msgs/Pose[] path_poses~%float32 planning_time~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
+  (cl:format cl:nil "~%~%int32[] path_ids~%geometry_msgs/Pose[] path_poses~%float32 planning_time~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetGoal-response>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'path_ids) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))

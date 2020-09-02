@@ -79,8 +79,8 @@ class SetLabelRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
-    # Set node_id = 0 to set label to last node
+    
+    
     int32 node_id
     string node_label
     
@@ -149,7 +149,7 @@ class SetLabelResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response 
+    
     
     `;
   }

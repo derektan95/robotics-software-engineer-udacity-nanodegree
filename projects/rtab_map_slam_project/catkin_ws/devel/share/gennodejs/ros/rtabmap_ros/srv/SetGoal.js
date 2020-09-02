@@ -92,13 +92,13 @@ class SetGoalRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
     
-    # Set either node_id or node_label
+    
+    
     int32 node_id
     string node_label
     
-    # optional: if not set, the base frame of the robot is used
+    
     string frame_id
     
     
@@ -220,7 +220,7 @@ class SetGoalResponse {
     // Returns full string definition for message
     return `
     
-    #response 
+    
     int32[] path_ids
     geometry_msgs/Pose[] path_poses
     float32 planning_time

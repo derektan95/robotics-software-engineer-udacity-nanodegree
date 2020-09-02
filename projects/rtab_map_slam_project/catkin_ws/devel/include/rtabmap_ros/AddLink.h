@@ -57,8 +57,8 @@ struct DataType< ::rtabmap_ros::AddLink > {
 };
 
 
-// service_traits::MD5Sum< ::rtabmap_ros::AddLinkRequest> should match
-// service_traits::MD5Sum< ::rtabmap_ros::AddLink >
+// service_traits::MD5Sum< ::rtabmap_ros::AddLinkRequest> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::AddLink > 
 template<>
 struct MD5Sum< ::rtabmap_ros::AddLinkRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::rtabmap_ros::AddLinkRequest>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::AddLinkRequest> should match
-// service_traits::DataType< ::rtabmap_ros::AddLink >
+// service_traits::DataType< ::rtabmap_ros::AddLinkRequest> should match 
+// service_traits::DataType< ::rtabmap_ros::AddLink > 
 template<>
 struct DataType< ::rtabmap_ros::AddLinkRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::rtabmap_ros::AddLinkRequest>
   }
 };
 
-// service_traits::MD5Sum< ::rtabmap_ros::AddLinkResponse> should match
-// service_traits::MD5Sum< ::rtabmap_ros::AddLink >
+// service_traits::MD5Sum< ::rtabmap_ros::AddLinkResponse> should match 
+// service_traits::MD5Sum< ::rtabmap_ros::AddLink > 
 template<>
 struct MD5Sum< ::rtabmap_ros::AddLinkResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::rtabmap_ros::AddLinkResponse>
   }
 };
 
-// service_traits::DataType< ::rtabmap_ros::AddLinkResponse> should match
-// service_traits::DataType< ::rtabmap_ros::AddLink >
+// service_traits::DataType< ::rtabmap_ros::AddLinkResponse> should match 
+// service_traits::DataType< ::rtabmap_ros::AddLink > 
 template<>
 struct DataType< ::rtabmap_ros::AddLinkResponse>
 {

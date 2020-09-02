@@ -133,12 +133,12 @@
 (setf (get rtabmap_ros::GetMapRequest :md5sum-) "a286d388b56439e8b53f910f3464f45a")
 (setf (get rtabmap_ros::GetMapRequest :datatype-) "rtabmap_ros/GetMapRequest")
 (setf (get rtabmap_ros::GetMapRequest :definition-)
-      "#request
+      "
 bool global
 bool optimized
 bool graphOnly
 ---
-#response
+
 MapData data
 
 
@@ -174,6 +174,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================
@@ -396,12 +398,12 @@ int32 type
 (setf (get rtabmap_ros::GetMapResponse :md5sum-) "a286d388b56439e8b53f910f3464f45a")
 (setf (get rtabmap_ros::GetMapResponse :datatype-) "rtabmap_ros/GetMapResponse")
 (setf (get rtabmap_ros::GetMapResponse :definition-)
-      "#request
+      "
 bool global
 bool optimized
 bool graphOnly
 ---
-#response
+
 MapData data
 
 
@@ -437,6 +439,8 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
+# 0: no frame
+# 1: global frame
 string frame_id
 
 ================================================================================

@@ -119,24 +119,24 @@
 (setf (get rtabmap_ros::PublishMapRequest :md5sum-) "6213f9f13cced23f4d224b22f59d839c")
 (setf (get rtabmap_ros::PublishMapRequest :datatype-) "rtabmap_ros/PublishMapRequest")
 (setf (get rtabmap_ros::PublishMapRequest :definition-)
-      "#request
+      "
 bool global
 bool optimized
 bool graphOnly
 ---
-#response
+
 
 ")
 
 (setf (get rtabmap_ros::PublishMapResponse :md5sum-) "6213f9f13cced23f4d224b22f59d839c")
 (setf (get rtabmap_ros::PublishMapResponse :datatype-) "rtabmap_ros/PublishMapResponse")
 (setf (get rtabmap_ros::PublishMapResponse :definition-)
-      "#request
+      "
 bool global
 bool optimized
 bool graphOnly
 ---
-#response
+
 
 ")
 

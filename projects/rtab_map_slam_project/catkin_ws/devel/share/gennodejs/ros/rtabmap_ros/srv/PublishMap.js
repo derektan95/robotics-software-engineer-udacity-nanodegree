@@ -88,7 +88,7 @@ class PublishMapRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #request
+    
     bool global
     bool optimized
     bool graphOnly
@@ -165,7 +165,7 @@ class PublishMapResponse {
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    #response
+    
     
     
     `;
