@@ -1,0 +1,8 @@
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/home_service_robot_navigation_project/catkin_ws/devel
+
+Name: turtlebot_interactive_markers
+Description: Description of turtlebot_interactive_markers
+Version: 2.3.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
