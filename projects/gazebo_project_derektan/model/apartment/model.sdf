@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<sdf version='1.7'>
+<sdf version='1.6'>
   <model name='apartment'>
     <pose>-0.722558 -3.65326 0 0 -0 0</pose>
     <link name='Wall_10'>

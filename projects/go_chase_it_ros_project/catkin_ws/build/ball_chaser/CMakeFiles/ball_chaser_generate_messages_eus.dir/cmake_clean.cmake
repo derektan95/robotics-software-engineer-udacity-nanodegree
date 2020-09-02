@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ball_chaser_generate_messages_eus"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/devel/share/roseus/ros/ball_chaser/srv/DriveToTarget.l"
-  "/home/derektan/Desktop/robotics_software_engineer_udacity/ros_intro/go_chase_it_project/catkin_ws/devel/share/roseus/ros/ball_chaser/manifest.l"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/devel/share/roseus/ros/ball_chaser/srv/DriveToTarget.l"
+  "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/devel/share/roseus/ros/ball_chaser/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.
