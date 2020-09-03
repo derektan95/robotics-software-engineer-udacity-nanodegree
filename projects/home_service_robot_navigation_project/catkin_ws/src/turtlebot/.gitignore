@@ -1,8 +1,0 @@
-.settings
-.idea
-bin
-build
-lib
-*.swp
-*.swo
-*.pyc
