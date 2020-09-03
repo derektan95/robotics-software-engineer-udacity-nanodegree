@@ -29,14 +29,14 @@ int main(int argc, char** argv){
     pickUpGoal.target_pose.header.stamp = ros::Time::now();
 
     // Define a position and orientation for the robot to reach
-    pickUpGoal.target_pose.pose.position.x = -6.3;
-    pickUpGoal.target_pose.pose.position.y = 0.9;
-    pickUpGoal.target_pose.pose.orientation.w = 0.823;
-
-    // pickUpGoal.target_pose.pose.position.x = -5.5;
-    // pickUpGoal.target_pose.pose.position.y = -0.5;
-    // pickUpGoal.target_pose.pose.orientation.z = 0.58;
+    // pickUpGoal.target_pose.pose.position.x = -6.3;
+    // pickUpGoal.target_pose.pose.position.y = 0.9;
     // pickUpGoal.target_pose.pose.orientation.w = 0.823;
+
+    pickUpGoal.target_pose.pose.position.x = -3.85;
+    pickUpGoal.target_pose.pose.position.y = -0.206;
+    pickUpGoal.target_pose.pose.orientation.z = 0;
+    pickUpGoal.target_pose.pose.orientation.w = 1.0;
 
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Travelling to Pickup Point...");
@@ -73,10 +73,10 @@ int main(int argc, char** argv){
     dropOffGoal.target_pose.header.stamp = ros::Time::now();
 
     // Define a position and orientation for the robot to reach
-    dropOffGoal.target_pose.pose.position.x = -4.1;
-    dropOffGoal.target_pose.pose.position.y = -1.7;
-    dropOffGoal.target_pose.pose.orientation.z = -0.483;
-    dropOffGoal.target_pose.pose.orientation.w = 0.8753;
+    dropOffGoal.target_pose.pose.position.x = -2.21487;
+    dropOffGoal.target_pose.pose.position.y = -0.13710;
+    dropOffGoal.target_pose.pose.orientation.z = 0.0303766;
+    dropOffGoal.target_pose.pose.orientation.w = 0.99953;
 
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Travelling to drop off point goal");
