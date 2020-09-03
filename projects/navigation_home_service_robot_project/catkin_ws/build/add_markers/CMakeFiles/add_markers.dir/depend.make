@@ -4,6 +4,8 @@
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/src/add_markers/src/add_markers.cpp
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovariance.h
+add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseWithCovarianceStamped.h
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
