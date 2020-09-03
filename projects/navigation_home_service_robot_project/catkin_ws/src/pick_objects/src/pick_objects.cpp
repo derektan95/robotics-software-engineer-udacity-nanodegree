@@ -74,10 +74,15 @@ int main(int argc, char** argv){
     dropOffGoal.target_pose.header.stamp = ros::Time::now();
 
     // Define a position and orientation for the robot to reach
-    dropOffGoal.target_pose.pose.position.x = -2.21487;
-    dropOffGoal.target_pose.pose.position.y = -0.13710;
-    dropOffGoal.target_pose.pose.orientation.z = 0.0303766;
-    dropOffGoal.target_pose.pose.orientation.w = 0.99953;
+    dropOffGoal.target_pose.pose.position.x = -2.06375;
+    dropOffGoal.target_pose.pose.position.y = -0.83982;
+    dropOffGoal.target_pose.pose.orientation.z = -0.26766;
+    dropOffGoal.target_pose.pose.orientation.w = 0.963511;
+
+    // dropOffGoal.target_pose.pose.position.x = -2.21487;
+    // dropOffGoal.target_pose.pose.position.y = -0.13710;
+    // dropOffGoal.target_pose.pose.orientation.z = 0.0303766;
+    // dropOffGoal.target_pose.pose.orientation.w = 0.99953;
 
     // Send the goal position and orientation for the robot to reach
     ROS_INFO("Travelling to drop off point goal");

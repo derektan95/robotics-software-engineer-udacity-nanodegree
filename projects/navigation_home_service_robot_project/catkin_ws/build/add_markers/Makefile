@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+add_markers/CMakeFiles/simulate_add_markers.dir/rule:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/simulate_add_markers.dir/rule
+.PHONY : add_markers/CMakeFiles/simulate_add_markers.dir/rule
+
+# Convenience name for target.
+simulate_add_markers: add_markers/CMakeFiles/simulate_add_markers.dir/rule
+
+.PHONY : simulate_add_markers
+
+# fast build rule for target.
+simulate_add_markers/fast:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f add_markers/CMakeFiles/simulate_add_markers.dir/build.make add_markers/CMakeFiles/simulate_add_markers.dir/build
+.PHONY : simulate_add_markers/fast
+
+# Convenience name for target.
 add_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : add_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -582,6 +597,33 @@ src/add_markers.cpp.s:
 	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f add_markers/CMakeFiles/add_markers.dir/build.make add_markers/CMakeFiles/add_markers.dir/src/add_markers.cpp.s
 .PHONY : src/add_markers.cpp.s
 
+src/simulate_add_markers.o: src/simulate_add_markers.cpp.o
+
+.PHONY : src/simulate_add_markers.o
+
+# target to build an object file
+src/simulate_add_markers.cpp.o:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f add_markers/CMakeFiles/simulate_add_markers.dir/build.make add_markers/CMakeFiles/simulate_add_markers.dir/src/simulate_add_markers.cpp.o
+.PHONY : src/simulate_add_markers.cpp.o
+
+src/simulate_add_markers.i: src/simulate_add_markers.cpp.i
+
+.PHONY : src/simulate_add_markers.i
+
+# target to preprocess a source file
+src/simulate_add_markers.cpp.i:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f add_markers/CMakeFiles/simulate_add_markers.dir/build.make add_markers/CMakeFiles/simulate_add_markers.dir/src/simulate_add_markers.cpp.i
+.PHONY : src/simulate_add_markers.cpp.i
+
+src/simulate_add_markers.s: src/simulate_add_markers.cpp.s
+
+.PHONY : src/simulate_add_markers.s
+
+# target to generate assembly for a file
+src/simulate_add_markers.cpp.s:
+	cd /home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build && $(MAKE) -f add_markers/CMakeFiles/simulate_add_markers.dir/build.make add_markers/CMakeFiles/simulate_add_markers.dir/src/simulate_add_markers.cpp.s
+.PHONY : src/simulate_add_markers.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -594,6 +636,7 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... simulate_add_markers"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -624,6 +667,9 @@ help:
 	@echo "... src/add_markers.o"
 	@echo "... src/add_markers.i"
 	@echo "... src/add_markers.s"
+	@echo "... src/simulate_add_markers.o"
+	@echo "... src/simulate_add_markers.i"
+	@echo "... src/simulate_add_markers.s"
 .PHONY : help
 
 

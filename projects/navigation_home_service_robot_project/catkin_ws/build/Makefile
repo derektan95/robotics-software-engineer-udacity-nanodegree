@@ -296,6 +296,19 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named simulate_add_markers
+
+# Build rule for target.
+simulate_add_markers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simulate_add_markers
+.PHONY : simulate_add_markers
+
+# fast build rule for target.
+simulate_add_markers/fast:
+	$(MAKE) -f add_markers/CMakeFiles/simulate_add_markers.dir/build.make add_markers/CMakeFiles/simulate_add_markers.dir/build
+.PHONY : simulate_add_markers/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
 
 # Build rule for target.
@@ -632,188 +645,6 @@ visualization_msgs_generate_messages_lisp: cmake_check_build_system
 visualization_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
 .PHONY : visualization_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named process_image
-
-# Build rule for target.
-process_image: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 process_image
-.PHONY : process_image
-
-# fast build rule for target.
-process_image/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/process_image.dir/build.make ball_chaser/CMakeFiles/process_image.dir/build
-.PHONY : process_image/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_gencpp
-
-# Build rule for target.
-ball_chaser_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_gencpp
-.PHONY : ball_chaser_gencpp
-
-# fast build rule for target.
-ball_chaser_gencpp/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_gencpp.dir/build.make ball_chaser/CMakeFiles/ball_chaser_gencpp.dir/build
-.PHONY : ball_chaser_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages_cpp
-
-# Build rule for target.
-ball_chaser_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages_cpp
-.PHONY : ball_chaser_generate_messages_cpp
-
-# fast build rule for target.
-ball_chaser_generate_messages_cpp/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages_cpp.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages_cpp.dir/build
-.PHONY : ball_chaser_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages
-
-# Build rule for target.
-ball_chaser_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages
-.PHONY : ball_chaser_generate_messages
-
-# fast build rule for target.
-ball_chaser_generate_messages/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages.dir/build
-.PHONY : ball_chaser_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_gennodejs
-
-# Build rule for target.
-ball_chaser_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_gennodejs
-.PHONY : ball_chaser_gennodejs
-
-# fast build rule for target.
-ball_chaser_gennodejs/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir/build.make ball_chaser/CMakeFiles/ball_chaser_gennodejs.dir/build
-.PHONY : ball_chaser_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named _ball_chaser_generate_messages_check_deps_DriveToTarget
-
-# Build rule for target.
-_ball_chaser_generate_messages_check_deps_DriveToTarget: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _ball_chaser_generate_messages_check_deps_DriveToTarget
-.PHONY : _ball_chaser_generate_messages_check_deps_DriveToTarget
-
-# fast build rule for target.
-_ball_chaser_generate_messages_check_deps_DriveToTarget/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/_ball_chaser_generate_messages_check_deps_DriveToTarget.dir/build.make ball_chaser/CMakeFiles/_ball_chaser_generate_messages_check_deps_DriveToTarget.dir/build
-.PHONY : _ball_chaser_generate_messages_check_deps_DriveToTarget/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages_eus
-
-# Build rule for target.
-ball_chaser_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages_eus
-.PHONY : ball_chaser_generate_messages_eus
-
-# fast build rule for target.
-ball_chaser_generate_messages_eus/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages_eus.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages_eus.dir/build
-.PHONY : ball_chaser_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named drive_bot
-
-# Build rule for target.
-drive_bot: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 drive_bot
-.PHONY : drive_bot
-
-# fast build rule for target.
-drive_bot/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/drive_bot.dir/build.make ball_chaser/CMakeFiles/drive_bot.dir/build
-.PHONY : drive_bot/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_genpy
-
-# Build rule for target.
-ball_chaser_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_genpy
-.PHONY : ball_chaser_genpy
-
-# fast build rule for target.
-ball_chaser_genpy/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_genpy.dir/build.make ball_chaser/CMakeFiles/ball_chaser_genpy.dir/build
-.PHONY : ball_chaser_genpy/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_geneus
-
-# Build rule for target.
-ball_chaser_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_geneus
-.PHONY : ball_chaser_geneus
-
-# fast build rule for target.
-ball_chaser_geneus/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_geneus.dir/build.make ball_chaser/CMakeFiles/ball_chaser_geneus.dir/build
-.PHONY : ball_chaser_geneus/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages_py
-
-# Build rule for target.
-ball_chaser_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages_py
-.PHONY : ball_chaser_generate_messages_py
-
-# fast build rule for target.
-ball_chaser_generate_messages_py/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages_py.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages_py.dir/build
-.PHONY : ball_chaser_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages_nodejs
-
-# Build rule for target.
-ball_chaser_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages_nodejs
-.PHONY : ball_chaser_generate_messages_nodejs
-
-# fast build rule for target.
-ball_chaser_generate_messages_nodejs/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages_nodejs.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages_nodejs.dir/build
-.PHONY : ball_chaser_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_generate_messages_lisp
-
-# Build rule for target.
-ball_chaser_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_generate_messages_lisp
-.PHONY : ball_chaser_generate_messages_lisp
-
-# fast build rule for target.
-ball_chaser_generate_messages_lisp/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_generate_messages_lisp.dir/build.make ball_chaser/CMakeFiles/ball_chaser_generate_messages_lisp.dir/build
-.PHONY : ball_chaser_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named ball_chaser_genlisp
-
-# Build rule for target.
-ball_chaser_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ball_chaser_genlisp
-.PHONY : ball_chaser_genlisp
-
-# fast build rule for target.
-ball_chaser_genlisp/fast:
-	$(MAKE) -f ball_chaser/CMakeFiles/ball_chaser_genlisp.dir/build.make ball_chaser/CMakeFiles/ball_chaser_genlisp.dir/build
-.PHONY : ball_chaser_genlisp/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_py
@@ -1787,6 +1618,7 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... simulate_add_markers"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -1813,20 +1645,6 @@ help:
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... process_image"
-	@echo "... ball_chaser_gencpp"
-	@echo "... ball_chaser_generate_messages_cpp"
-	@echo "... ball_chaser_generate_messages"
-	@echo "... ball_chaser_gennodejs"
-	@echo "... _ball_chaser_generate_messages_check_deps_DriveToTarget"
-	@echo "... ball_chaser_generate_messages_eus"
-	@echo "... drive_bot"
-	@echo "... ball_chaser_genpy"
-	@echo "... ball_chaser_geneus"
-	@echo "... ball_chaser_generate_messages_py"
-	@echo "... ball_chaser_generate_messages_nodejs"
-	@echo "... ball_chaser_generate_messages_lisp"
-	@echo "... ball_chaser_genlisp"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"

@@ -15,13 +15,21 @@ double orient_z1 = 0.0;
 double orient_w1 = 1.0;
 
 // DropOff Pt
-double pose_x2 = -2.21487;
-double pose_y2 = -0.13710;
-double pose_z2 = 0.0303766;
+double pose_x2 = -2.06375;
+double pose_y2 = -0.83982;
+double pose_z2 = 0;
 double orient_x2 = 0;
 double orient_y2 = 0;
-double orient_z2 = 0.0;
-double orient_w2 = 0.99953;
+double orient_z2 = -0.26766;
+double orient_w2 = 0.963511;
+
+// double pose_x2 = -2.21487;
+// double pose_y2 = -0.13710;
+// double pose_z2 = 0.0303766;
+// double orient_x2 = 0;
+// double orient_y2 = 0;
+// double orient_z2 = 0.0;
+// double orient_w2 = 0.99953;
 
 double threshold = 0.5;
 bool is_at_pickup_pt = false;
