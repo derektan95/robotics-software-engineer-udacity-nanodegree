@@ -17,9 +17,10 @@ int main(int argc, char** argv){
     // Wait 5 sec for move_base action server to come up
 
     ROS_INFO("Waiting for the move_base action server to come up");
-    while(!ac.waitForServer(ros::Duration(5.0))){
-        // ROS_INFO("Waiting for the move_base action server to come up");
-    }
+    sleep(5);
+    // while(!ac.waitForServer(ros::Duration(5.0))){
+    //     // ROS_INFO("Waiting for the move_base action server to come up");
+    // }
 
     // ==== FIRST GOAL - PICK UP! ====== /
     move_base_msgs::MoveBaseGoal pickUpGoal;

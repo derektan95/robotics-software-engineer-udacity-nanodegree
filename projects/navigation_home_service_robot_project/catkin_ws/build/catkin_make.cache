@@ -1,2 +1,2 @@
-ball_chaser:my_robot:pick_objects:slam_gmapping/gmapping:slam_gmapping/slam_gmapping:teleop_twist_keyboard
+add_markers:ball_chaser:my_robot:pick_objects:slam_gmapping/gmapping:slam_gmapping/slam_gmapping:teleop_twist_keyboard
 -DCATKIN_DEVEL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/install -G Unix Makefiles
