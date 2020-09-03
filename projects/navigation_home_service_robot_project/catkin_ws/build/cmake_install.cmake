@@ -130,6 +130,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build/slam_gmapping/slam_gmapping/cmake_install.cmake")
   include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build/teleop_twist_keyboard/cmake_install.cmake")
   include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build/ball_chaser/cmake_install.cmake")
+  include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build/pick_objects/cmake_install.cmake")
   include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build/slam_gmapping/gmapping/cmake_install.cmake")
 
 endif()

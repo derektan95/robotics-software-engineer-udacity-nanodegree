@@ -7,9 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/build"
-export PYTHONPATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROS_PACKAGE_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/src:$ROS_PACKAGE_PATH"

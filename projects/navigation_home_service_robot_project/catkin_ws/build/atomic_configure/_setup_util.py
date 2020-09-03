@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = '/opt/ros/kinetic'.split(';')
+            CMAKE_PREFIX_PATH = '/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/devel;/opt/ros/kinetic'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []
