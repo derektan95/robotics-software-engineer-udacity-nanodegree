@@ -12,9 +12,9 @@
         <param name="global_frame_id" value="map"/>
 
         <!-- If you choose to define initial pose here -->
-        <param name="initial_pose_x" value="-3.904"/>
-        <param name="initial_pose_y" value="-2.025"/>
-        <param name="initial_pose_a" value="1.573"/>
+        <param name="initial_pose_x" value="-6.2"/>
+        <param name="initial_pose_y" value="0.935"/>
+        <param name="initial_pose_a" value="-0.01"/>
 
         <!-- Limits on particles used in AMCL -->
         <param name="min_particles" value="50"/>
