@@ -62,6 +62,49 @@ int main( int argc, char** argv )
       sleep(1);
     }
     marker_pub.publish(marker);
+    ROS_INFO("Marker Published at Pickup Point.. Pause for 5s...");
+
+    // Pause for 5s
+    sleep(5);
+
+    // Hide the Marker
+    // Set the scale of the marker -- 1x1x1 here means 1m on a side
+    ROS_INFO("Hide the Marker for 5s...");
+    marker.scale.x = 0.0;
+    marker.scale.y = 0.0;
+    marker.scale.z = 0.0;
+    marker_pub.publish(marker);
+    sleep(5);
+    
+
+    // publish marker at dropoff zone
+    ROS_INFO("Marker Published at DropOff Point for 5s...");
+
+    // Set the pose of the marker.  This is a full 6DOF pose relative to the frame/time specified in the header
+    marker.pose.position.x = -2.21487;
+    marker.pose.position.y = -0.13710;
+    marker.pose.position.z = 0.0303766;
+    marker.pose.orientation.x = 0;
+    marker.pose.orientation.y = 0;
+    marker.pose.orientation.z = 0.0;
+    marker.pose.orientation.w = 0.99953;
+
+    // Set the scale of the marker -- 1x1x1 here means 1m on a side
+    marker.scale.x = 0.2;
+    marker.scale.y = 0.2;
+    marker.scale.z = 0.2;
+    marker_pub.publish(marker);
+    sleep(5);
+
+    
+    return 0;
+
+
+
+
+
+
+
 
     // // Cycle between different shapes
     // switch (shape)
@@ -80,6 +123,6 @@ int main( int argc, char** argv )
     //   break;
     // }
 
-    r.sleep();
+    // r.sleep();
   }
 }
