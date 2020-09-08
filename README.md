@@ -1,63 +1,59 @@
-# Robotics Software Engineering Nanodegree (Udacity)
+# Sensor Fusion Nanodegree (Udacity)
 
 **Disclaimer:** Udacity provided some starter code, but the implementation for these concepts are done by myself. Please contact derektan95@hotmail.com for any questions. 
 
 ### Certificate of Completion<br/>
-https://confirm.udacity.com/LHFY5GCD
+https://graduation.udacity.com/nd313
 
 ### Summary<br/>
-This course aims to educate more about localization and navigation principles pertaining to autonomous robots, using a commonly used platform called Robot Operating System (ROS). It covers topics ranging from Gazebo simulation, communcation between ROS nodes, localization using Extended Kalman Filter or Particle Filter, Simultaneous Localization & Mapping (SLAM) and A* Path Planning. All of these techniques culminates to a final project where a home service robot capable of localization and navigation is developed. 
+This is a course that summarizes the essential principles of **LiDAR, Camera, Radar and Sensor Fusion**. Since each sensor has their inherit strengths and limitations, it is important to investigate how they can complement each other to provide the most reliable results when attempting to determine the position and velocity of obstacles.
 
-**Note:** These projects are developed in **Ubuntu 16.04** and **ROS Kinetic**.
+<img src="media/pros_vs_cons_sensors_v1.png" width="900" height="200" />
 
+<img src="media/pros_vs_cons_sensors_v2.png" width="900" height="200" />
 
-## Gazebo World Segment<br/>
-**Gazebo** is a useful simulation tool that can be used with ROS to render robots in a simulated environment. It comes with a model and world editor, along with presets models, that can allow for quick prototyping of a physical environment.
-
-The main principles taught in this segment are: 
-1) Using model editor tool to render a robot with specified links & joints
-2) Using World editor tool to render an environment (e.g. a house)
-3) Running plugins on launch of Gazebo platform
-
-
-## ROS Essentials Segment<br/>
-**Robot Operating System** is a middleware designed for communication between different robotic parts, as well as common useful packages that can be used for robotic applications. In this project, different communication models were employed for different nodes of the robot to allow the robot to drive towards a white ball whenever the robot observes it. From a high level, the 2D camera node continuously checks whether the white ball in sight, and the angle of the ball relative to the robot's heading. If white ball is in sight, a service is called to the drive node to drive towards the ball with specified linear and rotational velocity. The drive node receives this service call and publishes motion information robot's wheel actuation node for movement. 
+## LiDAR Segment - Point Cloud Library<br/>
+The **Random Sample Consensus (RANSAC)** principle was used to segment the ground plane from point cloud data. Obstacle Clustering was performed using recursion, with improved efficiency using the **Kd-tree data structure**.
 
 The main principles taught in this segment are: 
-1) Packages & Catkin Workspaces
-2) Writing ROS nodes & communication models (Publisher-Subscriber, Service-Client)
+1) Plane Segmentation
+2) Euclidean Clustering using kd-tree
+3) Filtering techniques
+4) Reading and streaming PCDs
 
-<img src="media/go_chase_it_project_simulation.gif" width="900" height="400" />
+<img src="media/obstacle_detect_point_cloud_streaming.gif" width="900" height="400" />
 
-
-## Localization Segment<br/>
-2 common localization principles are the **Extended Kalman Filter (EKF)** and **Monte Carlo Localization (Particle Filter)**. Given a map of the surrounding, motor controls and sensor readings, the robot can use either of these principles to estimate its state position. In this project, I made use of the **Adaptive Monte Carlo Package** from ROS (http://wiki.ros.org/amcl). The robot starts off with a known map, with particles of equal probability weights generated randomly around the robot (shown as **green arrows**). As the robot moves, the particles likewise move. Each particle will then be assigned a probability denoting the likelihood of it being in its position and orientation, by comparing laser distance readings and the distance between it's own position to landmarks on the map. The higher the probability, the more likely a particle will survive in the resampling stage. After multiple timesteps of movement, we can observe that the **green arrows** converges accurately on the true location on the robot, indicating precise localization. 
-
-The main principles taught in this segment are: 
-1) Extended Kalman Filter
-2) Adaptive Monte Carlos Localization (Particle Filter)
-
-<img src="media/monte_carlo_localization_simulation.gif" width="900" height="400" />
-
-
-## Mapping & SLAM Segment<br/>
-A common mapping algorithm is the **Occupancy Grid Mapping**. Using sensor measurements and the Binary Bayes Filter, it computes the likelihood of an obstacle (i.e. map) given a particular grid on the map. Mapping requires the knowledge of the robot's start position, motor controls and sensor readings.
-
-**Simulataneous Localization and Mapping (SLAM)** combines principles from both localization and mapping. Using sensor readings and motor control, the robot can continuously map the surroundings, and use the map data to localize itself relative to it. The **Online SLAM approach** gives the map and robot's pose at a given point of time, while the **Full SLAM approach** gives the map and all past robot poses. The main techniques taught in this class is the **Grid-Based FastSLAM** and **GraphSLAM**, which are Online Slam and Full Slam approaches respectively. In this project, the **Real Time Appearance Based Mapping** is used as part of the Online SLAM approach, where a depth camera is used. It provides **3D localization and mapping**, with the ability to perform **loop closure** (i.e. identify previously visited locations to allow for smoother map generation). This is available as a ROS package (http://wiki.ros.org/rtabmap_ros).
+## Camera Segment - OpenCV<br/>
+The **YOLO v3 Object Recognition framework** was utilized to assign bounding boxes to potential targets. Corresponding bounding boxes were matched between consecutive images using keypoint Detectors and Descriptors. Accuracy and speed analysis test were conducted for different combinations of keypoint Detectors and Descriptors. For the referenced image above, the **Shi-Tomasi Detector** was used along with the **BRIEF Descriptor**. The Time-To-Collision value was calculated either with Lidar or camera keypoint values. **Keypoint detectors / descriptors used: SHI-TOMASI, HARRIS, FAST, BRISK, ORB, AKAZE, SIFT.** 
 
 The main principles taught in this segment are: 
-1) Occupancy Grid Mapping (Binary Bayes Filter)
-2) Grid-Based FastSLAM
-3) GraphSLAM
-4) RTAB-map SLAM (Variant of GraphSLAM)
+1) Camera Technology & Optics
+2) Autonomous Vehicles & Computer Vision 
+3) Engineering a Collision Detection System (Time To Collision)
+4) Tracking Image Features (Detectors, Descriptors, Matchers, Selectors)
+5) Introduction to Object Detection Frameworks - YOLO
+6) Sensor Fusion - Camera + LiDAR
 
-<img src="media/RTAB_map_SLAM_simulation.gif" width="900" height="400" />
+<img src="media/time_to_collision_with_keypt_match_gif.gif" width="1000" height="400" />
 
-## Path Planning & Navigation Segment<br/>
-There are 3 main approaches of path planning algorithms, namely **discrete, sample-based and probabilistic approaches**. These approaches differes in how the configuration space is broken down into maps and how paths are planned. In this project, the environment is pre-mapped using a ROS package called **gmapping** (http://wiki.ros.org/gmapping), which is based off of **2D Grid-Based FastSLAM** without loop closure capabilities. The **Adaptive Monte Carlo Localization package** from ROS (http://wiki.ros.org/amcl) is used to localize the robot at any point of time. The **ROS navigation stack** (http://wiki.ros.org/navigation), which leverages on the Dijkstra algorithm is used for the home service robot to simulate pickup and dropoff at preset points. Please run `home_service.sh` in src/shellscripts/ for quick launch of simulation.
+## Radar Segment - Matlab<br/>
+**Fast Fourier Transform** was performed twice on readings given by the **Frequency Modulated Continuous Wave (FMCW) Radar** to obtain the **Range-Doppler Map**.  Furthermore, **Cell Averaging Constant Fast Alarm Rate (CA - CFAR)** was conducted to dynamically filter out noise and to retrieve the peak corresponding to the obstacle. From the image below, one can deduce that the obstacle has a displacement of 110m and a velocity of -20m/s.
 
 The main principles taught in this segment are: 
-1) Path Planning Algorithms
-2) Simulating pickup and dropoff by combining all techniques learnt thus far
+1) Radar Principles
+2) Using Fast-Fourier Transform to obtain Range (Distance) and Doppler (Velocity) information
+3) Removing clutter (noise) using Cell Averaging Constant Fast Alarm Rate (CA-CFAR)
+4) Clustering and Tracking of Radar points
+5) Simulation on Matlab
 
-<img src="media/home_service_robot_simulation.gif" width="900" height="400" />
+<img src="media/range_doppler_map_obstacle_radar.jpg" width="900" height="400" />
+
+## Kalman Filter Segment<br/>
+The **Unscented Kalman Filter** takes in noisy measurement data as input and provides a robust estimation of displacement and velocity values of obstacles. The **Constant Turn Rate and Velocity Magnitude Model (CTRV) model** is used to provide predictions of future state of obstacle, which is then weighted against sensor readings to provide reliable estimations that minimizes prediction or sensor error. In the image referenced below, the green path represents the predicted path by the Kalman Filter. The Root Mean Squared Error (RMSE) between estimation and ground truth values is successfully minimized.
+
+The main principles taught in this segment are: 
+1) Normal Kalman Filter (1D)
+2) Extended Kalman Filter (2D)
+3) Unscented Kalman Filter (2D)
+
+<img src="media/unscented_kalman_filter_simulation.gif" width="1400" height="400" />
