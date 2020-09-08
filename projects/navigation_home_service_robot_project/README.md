@@ -1,4 +1,4 @@
-# Note to grader
+# Note
 
 - I did not use the turtlebot packages as I encountered issues with connecting teleops feature to the robot. 
 - All shellscript files can be located within the shellscript folder in src/ of the catkin workspace (named as specified)
@@ -13,4 +13,10 @@
 5. I wrote code in add_marker node to simualate appearing and disappearing of green cube
 6. I modified add_marker node to subscribe to AMCL pose to check if robot is close enough to pickup/dropoff point. If so (usin euclidean distance), then trigger green cube disappearing / appearing. 
 
-Happy Grading! :)
+# Shellscripts for execution
+1) test_slam.sh
+2) test_navigation.sh
+3) pickup_objects.sh
+4) add_markers.sh
+5) home_service.sh
+
