@@ -13,10 +13,10 @@
     <material>Gazebo/Gray</material>
   </gazebo>
   <gazebo reference="chassis">
-    <material>Gazebo/Red</material>
+    <material>Gazebo/Blue</material>
   </gazebo>
   <gazebo reference="camera">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Green</material>
   </gazebo>
   
   

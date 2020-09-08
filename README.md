@@ -27,7 +27,7 @@ The main principles taught in this segment are:
 
 
 ## Localization Segment<br/>
-2 common localization principles are the Extended Kalman Filter (EKF) and the Monte Carlos Localization (Particle Filter). Given a map of the surrounding and motor controls, the robot can use either of these principles to estimate its state position.
+2 common localization principles are the Extended Kalman Filter (EKF) and the Monte Carlos Localization (Particle Filter). Given a map of the surrounding and motor controls, the robot can use either of these principles to estimate its state position. In this project, I made use of the Adaptive Monte Carlo Package from ROS (http://wiki.ros.org/amcl). The robot starts off with a known map, with particles of equal probability weights generated randomly around the robot (shown as green arrows). As the robot moves, the particles likewise moves. Each particle will then be assigned a probability denoting the likelihood of it being in its position and orientation, by comparing laser distance readings and the distance between it's own position to landmarks on the map. The higher the probability, the more likely a particle will survive in the resampling stage. After multiple timesteps of movement, we can observe that the green arrows converges accurately on the true location on the robot, indicating precise localization. 
 
 The main principles taught in this segment are: 
 1) Extended Kalman Filter
