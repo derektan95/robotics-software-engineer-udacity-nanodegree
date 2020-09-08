@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -29,7 +28,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
-void protobuf_AssignDesc_time_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_time_2eproto() {
   protobuf_AddDesc_time_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -42,16 +40,16 @@ void protobuf_AssignDesc_time_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Time, nsec_),
   };
   Time_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       Time_descriptor_,
       Time::default_instance_,
       Time_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Time, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Time, _unknown_fields_),
       -1,
-      -1,
-      sizeof(Time),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Time, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(Time));
 }
 
 namespace {
@@ -62,11 +60,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_time_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Time_descriptor_, &Time::default_instance());
+    Time_descriptor_, &Time::default_instance());
 }
 
 }  // namespace
@@ -76,7 +73,6 @@ void protobuf_ShutdownFile_time_2eproto() {
   delete Time_reflection_;
 }
 
-void protobuf_AddDesc_time_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_time_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -102,13 +98,13 @@ struct StaticDescriptorInitializer_time_2eproto {
 
 // ===================================================================
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const int Time::kSecFieldNumber;
 const int Time::kNsecFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 Time::Time()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:gazebo.msgs.Time)
 }
@@ -117,8 +113,7 @@ void Time::InitAsDefaultInstance() {
 }
 
 Time::Time(const Time& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gazebo.msgs.Time)
@@ -158,46 +153,33 @@ const Time& Time::default_instance() {
 
 Time* Time::default_instance_ = NULL;
 
-Time* Time::New(::google::protobuf::Arena* arena) const {
-  Time* n = new Time;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+Time* Time::New() const {
+  return new Time;
 }
 
 void Time::Clear() {
-// @@protoc_insertion_point(message_clear_start:gazebo.msgs.Time)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(Time, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<Time*>(16)->f)
-#endif
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<Time*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(sec_, nsec_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool Time::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gazebo.msgs.Time)
   for (;;) {
@@ -269,15 +251,15 @@ void Time::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->nsec(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gazebo.msgs.Time)
 }
 
-::google::protobuf::uint8* Time::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Time::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:gazebo.msgs.Time)
   // required int32 sec = 1;
   if (has_sec()) {
@@ -289,7 +271,7 @@ void Time::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->nsec(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -297,45 +279,26 @@ void Time::SerializeWithCachedSizes(
   return target;
 }
 
-int Time::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:gazebo.msgs.Time)
-  int total_size = 0;
-
-  if (has_sec()) {
-    // required int32 sec = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->sec());
-  }
-
-  if (has_nsec()) {
-    // required int32 nsec = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->nsec());
-  }
-
-  return total_size;
-}
 int Time::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:gazebo.msgs.Time)
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required int32 sec = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->sec());
+    if (has_sec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->sec());
+    }
 
     // required int32 nsec = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->nsec());
+    if (has_nsec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->nsec());
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -347,27 +310,19 @@ int Time::ByteSize() const {
 }
 
 void Time::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:gazebo.msgs.Time)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const Time* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Time>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const Time* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const Time*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gazebo.msgs.Time)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:gazebo.msgs.Time)
     MergeFrom(*source);
   }
 }
 
 void Time::MergeFrom(const Time& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:gazebo.msgs.Time)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_sec()) {
       set_sec(from.sec());
@@ -376,20 +331,16 @@ void Time::MergeFrom(const Time& from) {
       set_nsec(from.nsec());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void Time::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:gazebo.msgs.Time)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Time::CopyFrom(const Time& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gazebo.msgs.Time)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -402,15 +353,13 @@ bool Time::IsInitialized() const {
 }
 
 void Time::Swap(Time* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Time::InternalSwap(Time* other) {
-  std::swap(sec_, other->sec_);
-  std::swap(nsec_, other->nsec_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(sec_, other->sec_);
+    std::swap(nsec_, other->nsec_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata Time::GetMetadata() const {
@@ -421,58 +370,6 @@ void Time::InternalSwap(Time* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Time
-
-// required int32 sec = 1;
-bool Time::has_sec() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void Time::set_has_sec() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void Time::clear_has_sec() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void Time::clear_sec() {
-  sec_ = 0;
-  clear_has_sec();
-}
- ::google::protobuf::int32 Time::sec() const {
-  // @@protoc_insertion_point(field_get:gazebo.msgs.Time.sec)
-  return sec_;
-}
- void Time::set_sec(::google::protobuf::int32 value) {
-  set_has_sec();
-  sec_ = value;
-  // @@protoc_insertion_point(field_set:gazebo.msgs.Time.sec)
-}
-
-// required int32 nsec = 2;
-bool Time::has_nsec() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void Time::set_has_nsec() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void Time::clear_has_nsec() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void Time::clear_nsec() {
-  nsec_ = 0;
-  clear_has_nsec();
-}
- ::google::protobuf::int32 Time::nsec() const {
-  // @@protoc_insertion_point(field_get:gazebo.msgs.Time.nsec)
-  return nsec_;
-}
- void Time::set_nsec(::google::protobuf::int32 value) {
-  set_has_nsec();
-  nsec_ = value;
-  // @@protoc_insertion_point(field_set:gazebo.msgs.Time.nsec)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

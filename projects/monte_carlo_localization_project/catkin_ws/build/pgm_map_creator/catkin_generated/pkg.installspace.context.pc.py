@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "pgm_map_creator"
-PROJECT_SPACE_DIR = "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install"
+PROJECT_SPACE_DIR = "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/install"
 PROJECT_VERSION = "0.0.0"

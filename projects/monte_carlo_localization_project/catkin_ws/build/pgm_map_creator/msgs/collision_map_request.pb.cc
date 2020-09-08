@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -29,7 +28,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
-void protobuf_AssignDesc_collision_5fmap_5frequest_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_collision_5fmap_5frequest_2eproto() {
   protobuf_AddDesc_collision_5fmap_5frequest_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -48,16 +46,16 @@ void protobuf_AssignDesc_collision_5fmap_5frequest_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CollisionMapRequest, threshold_),
   };
   CollisionMapRequest_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CollisionMapRequest_descriptor_,
       CollisionMapRequest::default_instance_,
       CollisionMapRequest_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CollisionMapRequest, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CollisionMapRequest, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CollisionMapRequest),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CollisionMapRequest, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CollisionMapRequest));
 }
 
 namespace {
@@ -68,11 +66,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_collision_5fmap_5frequest_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CollisionMapRequest_descriptor_, &CollisionMapRequest::default_instance());
+    CollisionMapRequest_descriptor_, &CollisionMapRequest::default_instance());
 }
 
 }  // namespace
@@ -82,7 +79,6 @@ void protobuf_ShutdownFile_collision_5fmap_5frequest_2eproto() {
   delete CollisionMapRequest_reflection_;
 }
 
-void protobuf_AddDesc_collision_5fmap_5frequest_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_collision_5fmap_5frequest_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -116,7 +112,7 @@ struct StaticDescriptorInitializer_collision_5fmap_5frequest_2eproto {
 
 // ===================================================================
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const int CollisionMapRequest::kUpperLeftFieldNumber;
 const int CollisionMapRequest::kUpperRightFieldNumber;
 const int CollisionMapRequest::kLowerRightFieldNumber;
@@ -125,10 +121,10 @@ const int CollisionMapRequest::kHeightFieldNumber;
 const int CollisionMapRequest::kResolutionFieldNumber;
 const int CollisionMapRequest::kFilenameFieldNumber;
 const int CollisionMapRequest::kThresholdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 CollisionMapRequest::CollisionMapRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:collision_map_creator_msgs.msgs.CollisionMapRequest)
 }
@@ -141,8 +137,7 @@ void CollisionMapRequest::InitAsDefaultInstance() {
 }
 
 CollisionMapRequest::CollisionMapRequest(const CollisionMapRequest& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:collision_map_creator_msgs.msgs.CollisionMapRequest)
@@ -157,7 +152,7 @@ void CollisionMapRequest::SharedCtor() {
   lowerleft_ = NULL;
   height_ = 0;
   resolution_ = 0;
-  filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   threshold_ = 255;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -168,7 +163,9 @@ CollisionMapRequest::~CollisionMapRequest() {
 }
 
 void CollisionMapRequest::SharedDtor() {
-  filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete filename_;
+  }
   if (this != default_instance_) {
     delete upperleft_;
     delete upperright_;
@@ -194,33 +191,22 @@ const CollisionMapRequest& CollisionMapRequest::default_instance() {
 
 CollisionMapRequest* CollisionMapRequest::default_instance_ = NULL;
 
-CollisionMapRequest* CollisionMapRequest::New(::google::protobuf::Arena* arena) const {
-  CollisionMapRequest* n = new CollisionMapRequest;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CollisionMapRequest* CollisionMapRequest::New() const {
+  return new CollisionMapRequest;
 }
 
 void CollisionMapRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(CollisionMapRequest, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CollisionMapRequest*>(16)->f)
-#endif
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CollisionMapRequest*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(height_, resolution_);
     if (has_upperleft()) {
       if (upperleft_ != NULL) upperleft_->::gazebo::msgs::Vector2d::Clear();
@@ -235,23 +221,23 @@ void CollisionMapRequest::Clear() {
       if (lowerleft_ != NULL) lowerleft_->::gazebo::msgs::Vector2d::Clear();
     }
     if (has_filename()) {
-      filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        filename_->clear();
+      }
     }
     threshold_ = 255;
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CollisionMapRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
   for (;;) {
@@ -349,7 +335,7 @@ bool CollisionMapRequest::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->filename().data(), this->filename().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "collision_map_creator_msgs.msgs.CollisionMapRequest.filename");
+            "filename");
         } else {
           goto handle_unusual;
         }
@@ -400,25 +386,25 @@ void CollisionMapRequest::SerializeWithCachedSizes(
   // required .gazebo.msgs.Vector2d upperLeft = 1;
   if (has_upperleft()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->upperleft_, output);
+      1, this->upperleft(), output);
   }
 
   // required .gazebo.msgs.Vector2d upperRight = 2;
   if (has_upperright()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->upperright_, output);
+      2, this->upperright(), output);
   }
 
   // required .gazebo.msgs.Vector2d lowerRight = 3;
   if (has_lowerright()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->lowerright_, output);
+      3, this->lowerright(), output);
   }
 
   // required .gazebo.msgs.Vector2d lowerLeft = 4;
   if (has_lowerleft()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->lowerleft_, output);
+      4, this->lowerleft(), output);
   }
 
   // required double height = 5;
@@ -436,7 +422,7 @@ void CollisionMapRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "collision_map_creator_msgs.msgs.CollisionMapRequest.filename");
+      "filename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       7, this->filename(), output);
   }
@@ -446,42 +432,42 @@ void CollisionMapRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->threshold(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:collision_map_creator_msgs.msgs.CollisionMapRequest)
 }
 
-::google::protobuf::uint8* CollisionMapRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* CollisionMapRequest::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
   // required .gazebo.msgs.Vector2d upperLeft = 1;
   if (has_upperleft()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, *this->upperleft_, false, target);
+      WriteMessageNoVirtualToArray(
+        1, this->upperleft(), target);
   }
 
   // required .gazebo.msgs.Vector2d upperRight = 2;
   if (has_upperright()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        2, *this->upperright_, false, target);
+      WriteMessageNoVirtualToArray(
+        2, this->upperright(), target);
   }
 
   // required .gazebo.msgs.Vector2d lowerRight = 3;
   if (has_lowerright()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *this->lowerright_, false, target);
+      WriteMessageNoVirtualToArray(
+        3, this->lowerright(), target);
   }
 
   // required .gazebo.msgs.Vector2d lowerLeft = 4;
   if (has_lowerleft()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        4, *this->lowerleft_, false, target);
+      WriteMessageNoVirtualToArray(
+        4, this->lowerleft(), target);
   }
 
   // required double height = 5;
@@ -499,7 +485,7 @@ void CollisionMapRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "collision_map_creator_msgs.msgs.CollisionMapRequest.filename");
+      "filename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         7, this->filename(), target);
@@ -510,7 +496,7 @@ void CollisionMapRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->threshold(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -518,85 +504,48 @@ void CollisionMapRequest::SerializeWithCachedSizes(
   return target;
 }
 
-int CollisionMapRequest::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
-  int total_size = 0;
-
-  if (has_upperleft()) {
-    // required .gazebo.msgs.Vector2d upperLeft = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->upperleft_);
-  }
-
-  if (has_upperright()) {
-    // required .gazebo.msgs.Vector2d upperRight = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->upperright_);
-  }
-
-  if (has_lowerright()) {
-    // required .gazebo.msgs.Vector2d lowerRight = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->lowerright_);
-  }
-
-  if (has_lowerleft()) {
-    // required .gazebo.msgs.Vector2d lowerLeft = 4;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->lowerleft_);
-  }
-
-  if (has_height()) {
-    // required double height = 5;
-    total_size += 1 + 8;
-  }
-
-  if (has_resolution()) {
-    // required double resolution = 6;
-    total_size += 1 + 8;
-  }
-
-  return total_size;
-}
 int CollisionMapRequest::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x0000003f) ^ 0x0000003f) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required .gazebo.msgs.Vector2d upperLeft = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->upperleft_);
+    if (has_upperleft()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->upperleft());
+    }
 
     // required .gazebo.msgs.Vector2d upperRight = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->upperright_);
+    if (has_upperright()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->upperright());
+    }
 
     // required .gazebo.msgs.Vector2d lowerRight = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->lowerright_);
+    if (has_lowerright()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->lowerright());
+    }
 
     // required .gazebo.msgs.Vector2d lowerLeft = 4;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->lowerleft_);
+    if (has_lowerleft()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->lowerleft());
+    }
 
     // required double height = 5;
-    total_size += 1 + 8;
+    if (has_height()) {
+      total_size += 1 + 8;
+    }
 
     // required double resolution = 6;
-    total_size += 1 + 8;
+    if (has_resolution()) {
+      total_size += 1 + 8;
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  if (_has_bits_[6 / 32] & 192u) {
     // optional string filename = 7 [default = ""];
     if (has_filename()) {
       total_size += 1 +
@@ -612,7 +561,7 @@ int CollisionMapRequest::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -624,27 +573,19 @@ int CollisionMapRequest::ByteSize() const {
 }
 
 void CollisionMapRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const CollisionMapRequest* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CollisionMapRequest>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CollisionMapRequest* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CollisionMapRequest*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:collision_map_creator_msgs.msgs.CollisionMapRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:collision_map_creator_msgs.msgs.CollisionMapRequest)
     MergeFrom(*source);
   }
 }
 
 void CollisionMapRequest::MergeFrom(const CollisionMapRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_upperleft()) {
       mutable_upperleft()->::gazebo::msgs::Vector2d::MergeFrom(from.upperleft());
@@ -665,27 +606,22 @@ void CollisionMapRequest::MergeFrom(const CollisionMapRequest& from) {
       set_resolution(from.resolution());
     }
     if (from.has_filename()) {
-      set_has_filename();
-      filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filename_);
+      set_filename(from.filename());
     }
     if (from.has_threshold()) {
       set_threshold(from.threshold());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CollisionMapRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void CollisionMapRequest::CopyFrom(const CollisionMapRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:collision_map_creator_msgs.msgs.CollisionMapRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -695,36 +631,34 @@ bool CollisionMapRequest::IsInitialized() const {
   if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
 
   if (has_upperleft()) {
-    if (!this->upperleft_->IsInitialized()) return false;
+    if (!this->upperleft().IsInitialized()) return false;
   }
   if (has_upperright()) {
-    if (!this->upperright_->IsInitialized()) return false;
+    if (!this->upperright().IsInitialized()) return false;
   }
   if (has_lowerright()) {
-    if (!this->lowerright_->IsInitialized()) return false;
+    if (!this->lowerright().IsInitialized()) return false;
   }
   if (has_lowerleft()) {
-    if (!this->lowerleft_->IsInitialized()) return false;
+    if (!this->lowerleft().IsInitialized()) return false;
   }
   return true;
 }
 
 void CollisionMapRequest::Swap(CollisionMapRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CollisionMapRequest::InternalSwap(CollisionMapRequest* other) {
-  std::swap(upperleft_, other->upperleft_);
-  std::swap(upperright_, other->upperright_);
-  std::swap(lowerright_, other->lowerright_);
-  std::swap(lowerleft_, other->lowerleft_);
-  std::swap(height_, other->height_);
-  std::swap(resolution_, other->resolution_);
-  filename_.Swap(&other->filename_);
-  std::swap(threshold_, other->threshold_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(upperleft_, other->upperleft_);
+    std::swap(upperright_, other->upperright_);
+    std::swap(lowerright_, other->lowerright_);
+    std::swap(lowerleft_, other->lowerleft_);
+    std::swap(height_, other->height_);
+    std::swap(resolution_, other->resolution_);
+    std::swap(filename_, other->filename_);
+    std::swap(threshold_, other->threshold_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CollisionMapRequest::GetMetadata() const {
@@ -735,312 +669,6 @@ void CollisionMapRequest::InternalSwap(CollisionMapRequest* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CollisionMapRequest
-
-// required .gazebo.msgs.Vector2d upperLeft = 1;
-bool CollisionMapRequest::has_upperleft() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CollisionMapRequest::set_has_upperleft() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CollisionMapRequest::clear_has_upperleft() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CollisionMapRequest::clear_upperleft() {
-  if (upperleft_ != NULL) upperleft_->::gazebo::msgs::Vector2d::Clear();
-  clear_has_upperleft();
-}
-const ::gazebo::msgs::Vector2d& CollisionMapRequest::upperleft() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.upperLeft)
-  return upperleft_ != NULL ? *upperleft_ : *default_instance_->upperleft_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::mutable_upperleft() {
-  set_has_upperleft();
-  if (upperleft_ == NULL) {
-    upperleft_ = new ::gazebo::msgs::Vector2d;
-  }
-  // @@protoc_insertion_point(field_mutable:collision_map_creator_msgs.msgs.CollisionMapRequest.upperLeft)
-  return upperleft_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::release_upperleft() {
-  // @@protoc_insertion_point(field_release:collision_map_creator_msgs.msgs.CollisionMapRequest.upperLeft)
-  clear_has_upperleft();
-  ::gazebo::msgs::Vector2d* temp = upperleft_;
-  upperleft_ = NULL;
-  return temp;
-}
-void CollisionMapRequest::set_allocated_upperleft(::gazebo::msgs::Vector2d* upperleft) {
-  delete upperleft_;
-  upperleft_ = upperleft;
-  if (upperleft) {
-    set_has_upperleft();
-  } else {
-    clear_has_upperleft();
-  }
-  // @@protoc_insertion_point(field_set_allocated:collision_map_creator_msgs.msgs.CollisionMapRequest.upperLeft)
-}
-
-// required .gazebo.msgs.Vector2d upperRight = 2;
-bool CollisionMapRequest::has_upperright() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CollisionMapRequest::set_has_upperright() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CollisionMapRequest::clear_has_upperright() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CollisionMapRequest::clear_upperright() {
-  if (upperright_ != NULL) upperright_->::gazebo::msgs::Vector2d::Clear();
-  clear_has_upperright();
-}
-const ::gazebo::msgs::Vector2d& CollisionMapRequest::upperright() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.upperRight)
-  return upperright_ != NULL ? *upperright_ : *default_instance_->upperright_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::mutable_upperright() {
-  set_has_upperright();
-  if (upperright_ == NULL) {
-    upperright_ = new ::gazebo::msgs::Vector2d;
-  }
-  // @@protoc_insertion_point(field_mutable:collision_map_creator_msgs.msgs.CollisionMapRequest.upperRight)
-  return upperright_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::release_upperright() {
-  // @@protoc_insertion_point(field_release:collision_map_creator_msgs.msgs.CollisionMapRequest.upperRight)
-  clear_has_upperright();
-  ::gazebo::msgs::Vector2d* temp = upperright_;
-  upperright_ = NULL;
-  return temp;
-}
-void CollisionMapRequest::set_allocated_upperright(::gazebo::msgs::Vector2d* upperright) {
-  delete upperright_;
-  upperright_ = upperright;
-  if (upperright) {
-    set_has_upperright();
-  } else {
-    clear_has_upperright();
-  }
-  // @@protoc_insertion_point(field_set_allocated:collision_map_creator_msgs.msgs.CollisionMapRequest.upperRight)
-}
-
-// required .gazebo.msgs.Vector2d lowerRight = 3;
-bool CollisionMapRequest::has_lowerright() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CollisionMapRequest::set_has_lowerright() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CollisionMapRequest::clear_has_lowerright() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CollisionMapRequest::clear_lowerright() {
-  if (lowerright_ != NULL) lowerright_->::gazebo::msgs::Vector2d::Clear();
-  clear_has_lowerright();
-}
-const ::gazebo::msgs::Vector2d& CollisionMapRequest::lowerright() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerRight)
-  return lowerright_ != NULL ? *lowerright_ : *default_instance_->lowerright_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::mutable_lowerright() {
-  set_has_lowerright();
-  if (lowerright_ == NULL) {
-    lowerright_ = new ::gazebo::msgs::Vector2d;
-  }
-  // @@protoc_insertion_point(field_mutable:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerRight)
-  return lowerright_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::release_lowerright() {
-  // @@protoc_insertion_point(field_release:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerRight)
-  clear_has_lowerright();
-  ::gazebo::msgs::Vector2d* temp = lowerright_;
-  lowerright_ = NULL;
-  return temp;
-}
-void CollisionMapRequest::set_allocated_lowerright(::gazebo::msgs::Vector2d* lowerright) {
-  delete lowerright_;
-  lowerright_ = lowerright;
-  if (lowerright) {
-    set_has_lowerright();
-  } else {
-    clear_has_lowerright();
-  }
-  // @@protoc_insertion_point(field_set_allocated:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerRight)
-}
-
-// required .gazebo.msgs.Vector2d lowerLeft = 4;
-bool CollisionMapRequest::has_lowerleft() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CollisionMapRequest::set_has_lowerleft() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CollisionMapRequest::clear_has_lowerleft() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CollisionMapRequest::clear_lowerleft() {
-  if (lowerleft_ != NULL) lowerleft_->::gazebo::msgs::Vector2d::Clear();
-  clear_has_lowerleft();
-}
-const ::gazebo::msgs::Vector2d& CollisionMapRequest::lowerleft() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerLeft)
-  return lowerleft_ != NULL ? *lowerleft_ : *default_instance_->lowerleft_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::mutable_lowerleft() {
-  set_has_lowerleft();
-  if (lowerleft_ == NULL) {
-    lowerleft_ = new ::gazebo::msgs::Vector2d;
-  }
-  // @@protoc_insertion_point(field_mutable:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerLeft)
-  return lowerleft_;
-}
-::gazebo::msgs::Vector2d* CollisionMapRequest::release_lowerleft() {
-  // @@protoc_insertion_point(field_release:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerLeft)
-  clear_has_lowerleft();
-  ::gazebo::msgs::Vector2d* temp = lowerleft_;
-  lowerleft_ = NULL;
-  return temp;
-}
-void CollisionMapRequest::set_allocated_lowerleft(::gazebo::msgs::Vector2d* lowerleft) {
-  delete lowerleft_;
-  lowerleft_ = lowerleft;
-  if (lowerleft) {
-    set_has_lowerleft();
-  } else {
-    clear_has_lowerleft();
-  }
-  // @@protoc_insertion_point(field_set_allocated:collision_map_creator_msgs.msgs.CollisionMapRequest.lowerLeft)
-}
-
-// required double height = 5;
-bool CollisionMapRequest::has_height() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CollisionMapRequest::set_has_height() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CollisionMapRequest::clear_has_height() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CollisionMapRequest::clear_height() {
-  height_ = 0;
-  clear_has_height();
-}
- double CollisionMapRequest::height() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.height)
-  return height_;
-}
- void CollisionMapRequest::set_height(double value) {
-  set_has_height();
-  height_ = value;
-  // @@protoc_insertion_point(field_set:collision_map_creator_msgs.msgs.CollisionMapRequest.height)
-}
-
-// required double resolution = 6;
-bool CollisionMapRequest::has_resolution() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CollisionMapRequest::set_has_resolution() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CollisionMapRequest::clear_has_resolution() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CollisionMapRequest::clear_resolution() {
-  resolution_ = 0;
-  clear_has_resolution();
-}
- double CollisionMapRequest::resolution() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.resolution)
-  return resolution_;
-}
- void CollisionMapRequest::set_resolution(double value) {
-  set_has_resolution();
-  resolution_ = value;
-  // @@protoc_insertion_point(field_set:collision_map_creator_msgs.msgs.CollisionMapRequest.resolution)
-}
-
-// optional string filename = 7 [default = ""];
-bool CollisionMapRequest::has_filename() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CollisionMapRequest::set_has_filename() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CollisionMapRequest::clear_has_filename() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CollisionMapRequest::clear_filename() {
-  filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_filename();
-}
- const ::std::string& CollisionMapRequest::filename() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-  return filename_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CollisionMapRequest::set_filename(const ::std::string& value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-}
- void CollisionMapRequest::set_filename(const char* value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-}
- void CollisionMapRequest::set_filename(const char* value, size_t size) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-}
- ::std::string* CollisionMapRequest::mutable_filename() {
-  set_has_filename();
-  // @@protoc_insertion_point(field_mutable:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-  return filename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CollisionMapRequest::release_filename() {
-  // @@protoc_insertion_point(field_release:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-  clear_has_filename();
-  return filename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CollisionMapRequest::set_allocated_filename(::std::string* filename) {
-  if (filename != NULL) {
-    set_has_filename();
-  } else {
-    clear_has_filename();
-  }
-  filename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filename);
-  // @@protoc_insertion_point(field_set_allocated:collision_map_creator_msgs.msgs.CollisionMapRequest.filename)
-}
-
-// optional int32 threshold = 8 [default = 255];
-bool CollisionMapRequest::has_threshold() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CollisionMapRequest::set_has_threshold() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CollisionMapRequest::clear_has_threshold() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CollisionMapRequest::clear_threshold() {
-  threshold_ = 255;
-  clear_has_threshold();
-}
- ::google::protobuf::int32 CollisionMapRequest::threshold() const {
-  // @@protoc_insertion_point(field_get:collision_map_creator_msgs.msgs.CollisionMapRequest.threshold)
-  return threshold_;
-}
- void CollisionMapRequest::set_threshold(::google::protobuf::int32 value) {
-  set_has_threshold();
-  threshold_ = value;
-  // @@protoc_insertion_point(field_set:collision_map_creator_msgs.msgs.CollisionMapRequest.threshold)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

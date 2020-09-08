@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -29,7 +28,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
-void protobuf_AssignDesc_vector2d_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_vector2d_2eproto() {
   protobuf_AddDesc_vector2d_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -42,16 +40,16 @@ void protobuf_AssignDesc_vector2d_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector2d, y_),
   };
   Vector2d_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       Vector2d_descriptor_,
       Vector2d::default_instance_,
       Vector2d_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector2d, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector2d, _unknown_fields_),
       -1,
-      -1,
-      sizeof(Vector2d),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Vector2d, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(Vector2d));
 }
 
 namespace {
@@ -62,11 +60,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_vector2d_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      Vector2d_descriptor_, &Vector2d::default_instance());
+    Vector2d_descriptor_, &Vector2d::default_instance());
 }
 
 }  // namespace
@@ -76,7 +73,6 @@ void protobuf_ShutdownFile_vector2d_2eproto() {
   delete Vector2d_reflection_;
 }
 
-void protobuf_AddDesc_vector2d_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_vector2d_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -102,13 +98,13 @@ struct StaticDescriptorInitializer_vector2d_2eproto {
 
 // ===================================================================
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const int Vector2d::kXFieldNumber;
 const int Vector2d::kYFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 Vector2d::Vector2d()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:gazebo.msgs.Vector2d)
 }
@@ -117,8 +113,7 @@ void Vector2d::InitAsDefaultInstance() {
 }
 
 Vector2d::Vector2d(const Vector2d& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:gazebo.msgs.Vector2d)
@@ -158,46 +153,33 @@ const Vector2d& Vector2d::default_instance() {
 
 Vector2d* Vector2d::default_instance_ = NULL;
 
-Vector2d* Vector2d::New(::google::protobuf::Arena* arena) const {
-  Vector2d* n = new Vector2d;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+Vector2d* Vector2d::New() const {
+  return new Vector2d;
 }
 
 void Vector2d::Clear() {
-// @@protoc_insertion_point(message_clear_start:gazebo.msgs.Vector2d)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(Vector2d, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<Vector2d*>(16)->f)
-#endif
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<Vector2d*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(x_, y_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool Vector2d::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:gazebo.msgs.Vector2d)
   for (;;) {
@@ -269,15 +251,15 @@ void Vector2d::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->y(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:gazebo.msgs.Vector2d)
 }
 
-::google::protobuf::uint8* Vector2d::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* Vector2d::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:gazebo.msgs.Vector2d)
   // required double x = 1;
   if (has_x()) {
@@ -289,7 +271,7 @@ void Vector2d::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->y(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -297,37 +279,22 @@ void Vector2d::SerializeWithCachedSizes(
   return target;
 }
 
-int Vector2d::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:gazebo.msgs.Vector2d)
-  int total_size = 0;
-
-  if (has_x()) {
-    // required double x = 1;
-    total_size += 1 + 8;
-  }
-
-  if (has_y()) {
-    // required double y = 2;
-    total_size += 1 + 8;
-  }
-
-  return total_size;
-}
 int Vector2d::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:gazebo.msgs.Vector2d)
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required double x = 1;
-    total_size += 1 + 8;
+    if (has_x()) {
+      total_size += 1 + 8;
+    }
 
     // required double y = 2;
-    total_size += 1 + 8;
+    if (has_y()) {
+      total_size += 1 + 8;
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -339,27 +306,19 @@ int Vector2d::ByteSize() const {
 }
 
 void Vector2d::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:gazebo.msgs.Vector2d)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const Vector2d* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const Vector2d>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const Vector2d* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const Vector2d*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:gazebo.msgs.Vector2d)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:gazebo.msgs.Vector2d)
     MergeFrom(*source);
   }
 }
 
 void Vector2d::MergeFrom(const Vector2d& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:gazebo.msgs.Vector2d)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -368,20 +327,16 @@ void Vector2d::MergeFrom(const Vector2d& from) {
       set_y(from.y());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void Vector2d::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:gazebo.msgs.Vector2d)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Vector2d::CopyFrom(const Vector2d& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:gazebo.msgs.Vector2d)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -394,15 +349,13 @@ bool Vector2d::IsInitialized() const {
 }
 
 void Vector2d::Swap(Vector2d* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Vector2d::InternalSwap(Vector2d* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata Vector2d::GetMetadata() const {
@@ -413,58 +366,6 @@ void Vector2d::InternalSwap(Vector2d* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// Vector2d
-
-// required double x = 1;
-bool Vector2d::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void Vector2d::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void Vector2d::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void Vector2d::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
- double Vector2d::x() const {
-  // @@protoc_insertion_point(field_get:gazebo.msgs.Vector2d.x)
-  return x_;
-}
- void Vector2d::set_x(double value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:gazebo.msgs.Vector2d.x)
-}
-
-// required double y = 2;
-bool Vector2d::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void Vector2d::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void Vector2d::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void Vector2d::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
- double Vector2d::y() const {
-  // @@protoc_insertion_point(field_get:gazebo.msgs.Vector2d.y)
-  return y_;
-}
- void Vector2d::set_y(double value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:gazebo.msgs.Vector2d.y)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

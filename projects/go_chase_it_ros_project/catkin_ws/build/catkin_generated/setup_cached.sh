@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/src:$ROS_PACKAGE_PATH"

@@ -1,2 +1,2 @@
-ball_chaser:my_robot:pgm_map_creator:teleop_twist_keyboard
+my_robot:pgm_map_creator:teleop_twist_keyboard
 -DCATKIN_DEVEL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/install -G Unix Makefiles

@@ -6,6 +6,10 @@ Tested on Ubuntu 16.04, ROS Kinetic, Boost 1.58
 
 ## Usage
 
+### Required Packages
+We need libignition-math2-dev and protobuf-compiler to compile the map creator:
+`sudo apt-get install libignition-math2-dev protobuf-compiler`
+
 ### Add the package to your workspace
 0. Create a catkin workspace
 1. Clone the package to the src folder

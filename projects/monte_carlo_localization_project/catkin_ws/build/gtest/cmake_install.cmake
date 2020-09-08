@@ -1,8 +1,8 @@
-# Install script for directory: /usr/src/googletest
+# Install script for directory: /usr/src/gmock
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,14 +32,9 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/build/gtest/gtest/cmake_install.cmake")
 
 endif()
 

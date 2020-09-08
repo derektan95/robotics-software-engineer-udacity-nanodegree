@@ -1,4 +1,4 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/monte_carlos_localization/catkin_ws/install
+prefix=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/monte_carlo_localization_project/catkin_ws/install
 
 Name: my_robot
 Description: Description of my_robot
