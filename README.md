@@ -6,7 +6,7 @@
 https://confirm.udacity.com/LHFY5GCD
 
 ### Summary<br/>
-This course aims to educate more about localization and navigation principles of autonomous robots, using a commonly used platform called Robot Operating System (ROS). It covers topics ranging from Gazebo simulation, communcation between ROS nodes, localization using Extended Kalman Filter or Particle Filter, Simultaneous Localization & Mapping (SLAM) and A* Path Planning. All of these techniques culminates to a final project where a home service robot capable of localization and navigation is developed. These projects are developed in **Ubuntu 16.04** and **ROS Kinetic**."
+This course aims to educate more about localization and navigation principles of autonomous robots, using a commonly used platform called Robot Operating System (ROS). It covers topics ranging from Gazebo simulation, communcation between ROS nodes, localization using Extended Kalman Filter or Particle Filter, Simultaneous Localization & Mapping (SLAM) and A* Path Planning. All of these techniques culminates to a final project where a home service robot capable of localization and navigation is developed. These projects are developed in **Ubuntu 16.04** and **ROS Kinetic**.
 
 
 ## Gazebo World Segment<br/>
@@ -25,7 +25,7 @@ The main principles taught in this segment are:
 1) Packages & Catkin Workspaces
 2) Writing ROS nodes & communication models (Publisher-Subscriber, Service-Client)
 
-...Insert image here...
+<img src="media/go_chase_it_project_simulation.gif" width="900" height="400" />
 
 
 ## Localization Segment<br/>
@@ -35,7 +35,7 @@ The main principles taught in this segment are:
 1) Extended Kalman Filter
 2) Adaptive Monte Carlos Localization (Particle Filter)
 
-...Insert image here...
+<img src="media/monte_carlo_localization_simulation.gif" width="900" height="400" />
 
 
 ## Mapping & SLAM Segment<br/>
@@ -49,8 +49,7 @@ The main principles taught in this segment are:
 3) GraphSLAM
 4) RTAB-map SLAM (Variant of GraphSLAM)
 
-...Insert image here...
-
+<img src="media/RTAB_map_SLAM_simulation.gif" width="900" height="400" />
 
 ## Path Planning & Navigation Segment<br/>
 There are 3 main approaches of path planning algorithms, namely **discrete, sample-based and probabilistic approaches**. These approaches differes in how the configuration space is broken down into maps and how paths are planned. In this project, the environment is pre-mapped using a ROS package called **gmapping** (http://wiki.ros.org/gmapping), which is based off of **2D Grid-Based FastSLAM**. The **Adaptive Monte Carlo Localization package** from ROS (http://wiki.ros.org/amcl) is used to localize the robot any point of time. The **ROS navigation stack** (http://wiki.ros.org/navigation), which leverages on the Dijkstra algorithm is used for the home service robot to simulate pickup and dropoff at preset points. Please run `home_service.sh` in src/shellscripts/ for quick launch of simulation.
@@ -59,4 +58,4 @@ The main principles taught in this segment are:
 1) Path Planning Algorithms
 2) Simulating pickup and dropoff by combining all techniques learnt thus far
 
-...Insert image here...
+<img src="media/home_service_robot_simulation.gif" width="900" height="400" />
