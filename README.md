@@ -1,4 +1,4 @@
-# Tutorial for Robotics Software Engineering Nanodegree - Udacity Course
+# Robotics Software Engineering Nanodegree - Udacity Course
 
 **Disclaimer:** Udacity provided some starter code, but the implementation for these concepts are done by myself. Please contact derektan95@hotmail.com for any questions. 
 
