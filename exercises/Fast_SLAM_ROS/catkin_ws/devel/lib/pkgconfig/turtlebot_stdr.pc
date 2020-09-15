@@ -1,8 +1,0 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity/SLAM_ROS/catkin_ws/devel
-
-Name: turtlebot_stdr
-Description: Description of turtlebot_stdr
-Version: 2.2.3
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

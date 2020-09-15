@@ -1,8 +1,0 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/go_chase_it_ros_project/catkin_ws/devel
-
-Name: my_robot
-Description: Description of my_robot
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

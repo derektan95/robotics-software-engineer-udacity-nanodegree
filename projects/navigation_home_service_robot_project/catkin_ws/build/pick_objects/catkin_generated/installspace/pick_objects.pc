@@ -1,8 +1,0 @@
-prefix=/home/derektan/Desktop/robotics_software_engineer_udacity_projects/projects/navigation_home_service_robot_project/catkin_ws/install
-
-Name: pick_objects
-Description: Description of pick_objects
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
