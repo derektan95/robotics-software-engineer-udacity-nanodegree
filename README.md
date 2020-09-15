@@ -8,7 +8,7 @@ https://confirm.udacity.com/LHFY5GCD
 ### Summary<br/>
 This course aims to educate more about localization and navigation principles pertaining to autonomous robots, using a commonly used platform called Robot Operating System (ROS). It covers topics ranging from Gazebo simulation, communcation between ROS nodes, localization using Extended Kalman Filter or Particle Filter, Simultaneous Localization & Mapping (SLAM) and A* Path Planning. All of these techniques culminates to a final project where a home service robot capable of localization and navigation is developed. Instructions for compiling each project is available on each project's subdirectory.
 
-**Note:** These projects are developed in **Ubuntu 16.04** and **ROS Kinetic**. Please clone the `master` branch for latest version of all projects. The `with_cmake_files` branch contains cmake files from my computer, which will be irrelevant for you. For folders in catkin workspaces, `catkin_ws`, please run `catkin_make` to build the catkin workspace.
+**Note:** These projects are developed in **Ubuntu 16.04**, **ROS Kinetic** and **Gazebo 7.16.1**. Please clone the `master` branch for latest version of all projects. The `with_cmake_files` branch contains cmake files from my computer, which will be irrelevant for you. For folders in catkin workspaces, `catkin_ws`, please run `catkin_make` to build the catkin workspace.
 
 
 ## Gazebo World Segment<br/>
