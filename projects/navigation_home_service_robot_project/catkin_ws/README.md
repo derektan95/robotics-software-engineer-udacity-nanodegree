@@ -10,7 +10,7 @@ The main principles taught in this segment are:
 
 
 ## Setup (condensed within shellscripts in catkin_ws/src/shellscripts)
-To run Home Service Robot Project: `./home_service.sh`<br/><br/>
+To run Home Service Robot Project: `./home_service.sh`<br/>
 
 Alternatively, run the steps in separate tabs:
 1. Navigate to catkin workspace root directory: `cd catkin/`
