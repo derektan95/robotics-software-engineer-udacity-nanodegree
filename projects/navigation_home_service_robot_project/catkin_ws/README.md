@@ -10,9 +10,17 @@ The main principles taught in this segment are:
 
 
 ## Setup (condensed within shellscripts in catkin_ws/src/shellscripts)
-To run Home Service Robot Project: `./home_service.sh`
+To run Home Service Robot Project: `./home_service.sh`<br/><br/>
 
-Other shellscripts were written during the testing phase:
+Alternatively, run the steps in separate tabs:
+1. Navigate to catkin workspace root directory: `cd catkin/`
+2. Compile Catkin Workspace: `catkin_make`
+3. Launch Robot in world: `source devel/setup.bash && roslaunch my_robot world.launch`
+4. Launch Launch acml node for localization **(new tab)**: `source devel/setup.bash && roslaunch my_robot amcl.launch`
+5. Launch marker visualization node **(new tab)**: `source devel/setup.bash && roslaunch my_robot add_markers.launch`
+6. Launch pickup-dropoff node **(new tab)**: `source devel/setup.bash && roslaunch my_robot pick_objects.launch`<br/>
+
+## Other shellscripts used for testing:
 1. Testing gmapping module: `./test_slam.sh`
 2. Testing AMCL Localization & ROS Navigation Stack: `./test_navigation.sh`
 3. Testing pickup functionality: `./pickup_objects.sh`
